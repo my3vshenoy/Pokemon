@@ -16,11 +16,9 @@ public class Pokemon {
 		// TODO Auto-generated method stub
 		System.out.println("Welcome to Pokemon Go\n");
 		System.out.println("Let the coding begin");
-<<<<<<< HEAD
 //test
-=======
 		//Adding comment2222
->>>>>>> origin/master
+
 	}
 
 }
