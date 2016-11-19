@@ -17,18 +17,18 @@ public class Pokemon {
 		System.out.println("Welcome to Pokemon Go\n");
 		System.out.println("Let the coding begin");
 		public class Pokemon {
-			//declaring the instance variables (or attributes) of the pokemon
-				private String name;
-				private String type1;
-				private String type2;
-				private String ability1;
-				private String ability2;
-				private int strength;
-				private int HP;
-				private int level;
+		//declaring the instance variables (or attributes) of the pokemon
+			private String name;
+			private String type1;
+			private String type2;
+			private String ability1;
+			private String ability2;
+			private int strength;
+			private int HP;
+			private int level;
 				
-				//constructor initializes the variables
-				public Pokemon (String name, String type1, String type2, String ability1, String ability2, int strength, int HP, int level)
+			//constructor initializes the variables
+		public Pokemon (String name, String type1, String type2, String ability1, String ability2, int strength, int HP, int level)
 				{
 					this.name = name;
 					this.type1= type1;
@@ -41,21 +41,21 @@ public class Pokemon {
 				}
 				
 				//Set method to set the value each of the three instance variables 
-				public void setName(String name)
+			public void setName(String name)
 					{this.name = name;}	
-				public void setType1(String type1)
+			public void setType1(String type1)
 					{this.type1 = type1;}
-				public void setType2(String type2)
+			public void setType2(String type2)
 					{this.type2 = type2;}
-				public void setAbility1(String ability1)
+			public void setAbility1(String ability1)
 					{this.ability1 = ability1;}
-				public void setAbility2(String ability2)
+			public void setAbility2(String ability2)
 					{this.ability2 = ability2;}
-				public void setHP(int HP)
+			public void setHP(int HP)
 					{this.HP = HP;}	
-				public void setStrength(int strength)
+			public void setStrength(int strength)
 					{this.strength = strength;}
-				public void setLevel(int level)
+			public void setLevel(int level)
 					{this.level = level;}
 				
 				//Get method to retrieve the value of each instance variable
@@ -75,8 +75,9 @@ public class Pokemon {
 					{return strength;}
 				public int getLevel()
 					{return level;}
-		}
-
-	}
-
+		
+public static battle()
+{
+	
+}
 }
