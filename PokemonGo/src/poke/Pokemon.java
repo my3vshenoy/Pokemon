@@ -78,6 +78,16 @@ public class Pokemon {
 		
 public static battle()
 {
+	//Create local variables to identify the user's pokemon and their opponent's pokemon
+	public String selectedAbility;
+	public Pokemon userPokemon;
+	public Pokemon opponentPokemon;
+	
+	System.out.println("Let the battle begin!");
+	System.out.println("What will you do?");
+	System.out.printf(");
 	
 }
 }
+
+
