@@ -85,7 +85,7 @@ public static battle()
 	
 	System.out.println("Let the battle begin!");
 	System.out.println("What will you do?");
-	System.out.printf(");
+	System.out.printf(" 1: Attack %n 2: Use Potion%n 3: );
 	
 }
 }
