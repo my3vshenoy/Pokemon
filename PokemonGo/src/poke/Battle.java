@@ -1,11 +1,12 @@
-package Final_Project;
+package poke;
+import java.util.Scanner;
 
 public class Battle {
 //Create local variables to identify the user's pokemon and their opponent's pokemon
 	public String selectedAbility;
 	public Pokemon userPokemon;
 	public Pokemon opponentPokemon;
-		
+	public Battle(){	
 	System.out.println("Let the battle begin!");
 	System.out.println("What will you do?");
 	System.out.printf(" 1: Attack %n 2: Use Potion%n 3: Use Pokeball");
@@ -28,4 +29,5 @@ public class Battle {
 			break;
 		default case: System.out.println("That is not a valid selection. What would you like to do?");
 			}
+	}
 }

@@ -12,11 +12,11 @@ public class Pokemon {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("Welcome to Pokemon Go\n");
-		System.out.println("Let the coding begin");
-		public class Pokemon {
+//	public static void main(String[] args) {
+//		// TODO Auto-generated method stub
+//		System.out.println("Welcome to Pokemon Go\n");
+//		System.out.println("Let the coding begin");
+//		public class Pokemon {
 		//declaring the instance variables (or attributes) of the pokemon
 			private String name;
 			private String type1;
@@ -76,16 +76,16 @@ public class Pokemon {
 				public int getLevel()
 					{return level;}
 		
-public static battle()
+public void battle()
 {
 	//Create local variables to identify the user's pokemon and their opponent's pokemon
-	public String selectedAbility;
-	public Pokemon userPokemon;
-	public Pokemon opponentPokemon;
+	final String selectedAbility;
+	final Pokemon userPokemon;
+	final Pokemon opponentPokemon;
 	
 	System.out.println("Let the battle begin!");
 	System.out.println("What will you do?");
-	System.out.printf(" 1: Attack %n 2: Use Potion%n 3: );
+	System.out.printf(" 1: Attack %n 2: Use Potion%n 3: ");
 	
 }
 }
