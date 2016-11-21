@@ -13,10 +13,10 @@ public class Battle {
 	
 	//accept's the user's selection and stores it locally
 		Scanner reader = new Scanner (System.in);
-		int selection = reader.nextInt();
+		int selection = reader2.nextInt();
 			
 	//Applies the user's selection, and names the user's first pokemon accordingly
-		switch(selection)
+		switch(selection2)
 			{
 		case 1: pokemon2.setName(team2[0]);
 			pokemon2.setAbility1(team2Moves[0]);
