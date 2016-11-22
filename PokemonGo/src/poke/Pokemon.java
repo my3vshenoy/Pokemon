@@ -21,8 +21,8 @@ public class Pokemon {
 			private String name;
 			private String type1;
 			private String type2;
-			private String ability1;
-			private String ability2;
+			private Ability ability1;
+			private Ability ability2;
 			private int strength;
 			private int HP;
 			private int level;
@@ -76,18 +76,29 @@ public class Pokemon {
 				public int getLevel()
 					{return level;}
 		
-public void battle()
-{
-	//Create local variables to identify the user's pokemon and their opponent's pokemon
-	final String selectedAbility;
-	final Pokemon userPokemon;
-	final Pokemon opponentPokemon;
-	
-	System.out.println("Let the battle begin!");
-	System.out.println("What will you do?");
-	System.out.printf(" 1: Attack %n 2: Use Potion%n 3: ");
-	
-}
+
+class EvolvablePokemon extends Pokemon{
+
+	private EvolvablePokemon poke;
+
+	EvolvablePokemon(String name, String type1, String type2, Ability ability1, Ability ability2, 
+	int strength, int level, int evolutionLevel, EvolvablePokemon poke){
+		
+		//Initializing the superclass constructor bottom up
+		super(name, type1, type2, ability1, ability2, strength, level);
+		this.poke = poke;
+	}
+
+	//Method to evolve the pokemon 
+	//This must be updated to fit the leveling system
+	public void evolve(){
+
+		name = poke.name;
+		combatPower = poke.combatPower;
+		ability = poke.ability;
+		hitPoint = poke.hitPoint;
+
+	}
 }
 
 
