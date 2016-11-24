@@ -13,25 +13,25 @@ public class Battle {
 	//initialize and array of String variables to store the names of the types
 	//This will be necessary to look up those types in the "multiplier" matrix that follows
 	String[] types;
-		types[0]=”Bug”;
-		types[1]=”Dark”;
-		types[2]=”Dragon”;
-		types[3]=”Electric”;
-		types[4]=”Fairy”;
-		types[5]=”Fighting”;
-		types[6]=”Fire”;
-		types[7]=”Flying”;
-		types[8]=”Ghost”;
-		types[9]=”Grass”;
-		types[10]=”Ground”;
-		types[11]=”Ice”;
-		types[12]=”Normal”;
-		types[13]=”Poison”;
-		types[14]=”Psychic”;
-		types[15]=”Rock”;
-		types[16]=”Steel”;
-		types[17]=”Water”;
-		types[18]=”None”;
+		types[0]=ï¿½Bugï¿½;
+		types[1]=ï¿½Darkï¿½;
+		types[2]=ï¿½Dragonï¿½;
+		types[3]=ï¿½Electricï¿½;
+		types[4]=ï¿½Fairyï¿½;
+		types[5]=ï¿½Fightingï¿½;
+		types[6]=ï¿½Fireï¿½;
+		types[7]=ï¿½Flyingï¿½;
+		types[8]=ï¿½Ghostï¿½;
+		types[9]=ï¿½Grassï¿½;
+		types[10]=ï¿½Groundï¿½;
+		types[11]=ï¿½Iceï¿½;
+		types[12]=ï¿½Normalï¿½;
+		types[13]=ï¿½Poisonï¿½;
+		types[14]=ï¿½Psychicï¿½;
+		types[15]=ï¿½Rockï¿½;
+		types[16]=ï¿½Steelï¿½;
+		types[17]=ï¿½Waterï¿½;
+		types[18]=ï¿½Noneï¿½;
 
 	
 	//This matrix (or 2-dimensional array) stores the type-based damage multipliers to be used in battle 
@@ -172,7 +172,7 @@ public class Battle {
 			//accept input from the user
 			//use another switch statement to call the usePokeball method of the selected potion
 			break;
-		default case: System.out.println("That is not a valid selection. What would you like to do?");
+		default: System.out.println("That is not a valid selection. What would you like to do?");
 			}
 	}
 }
