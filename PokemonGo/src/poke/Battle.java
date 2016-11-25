@@ -9,7 +9,13 @@ public class Battle {
 	public Pokemon userPokemon;
 	public Pokemon opponentPokemon;
 	public Battle(){	
-	
+
+	//initialize pokeballs
+	String[] pokeball = {"", "Pokeball", "Greatball", "Ultraball"};
+	int[] quantityBall = {0, 3, 3, 3};
+	double[] catchRate = {0, 1, 1.5, 2};
+	int ballSelection = 0;	
+		
 	//initialize and array of String variables to store the names of the types
 	//This will be necessary to look up those types in the "multiplier" matrix that follows
 	String[] types;
@@ -168,9 +174,21 @@ public class Battle {
 				//accept input from the user
 				//use another switch statement to call the usePotion method of the selected potion
 			break;
-		case 3: //display the list of Pokeball items
-			//accept input from the user
-			//use another switch statement to call the usePokeball method of the selected potion
+		case 3: 
+//need better error correction 
+  			//prompt pokeball selection
+  			System.out.println("Which type of pokeball do you want to use: (choose from 1~3)");
+  			System.out.printf("1. Pokeball(%d)%n2. Greatball(%d)%n3. Ultraball(%d)%n", 
+  				quantityBall[1], quantityBall[2], quantityBall[3]);
+  			//accept input from the user
+  			ballSelection = new Scanner(System.in).nextInt();
+  			System.out.println();
+  			//reduce pokeball count by 1
+  			if(quantityBall[ballSelection]>0)
+  				quantityBall[ballSelection]--;
+//need some catch rate formula  			
+  			else
+  				System.out.printf("You are out of %ss. You lost your turn.%n%n", pokeball[ballSelection]);  					
 			break;
 		default: System.out.println("That is not a valid selection. What would you like to do?");
 			}
