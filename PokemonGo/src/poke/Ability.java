@@ -22,20 +22,21 @@ public class Ability {
 		this.abilityType = abilityType;
 		this.abilityPower = abilityPower;
 		}
+	
 	//Set methods to assign values to the abilities
 	public void setAbilityName(String abilityName)
 		{this.abilityName= abilityName;}
+	
 	public void setAbilityType (String abilityType)
 		{this.abilityType = abilityType;}
+	
 	public void setAbilityPower(int abilityPower)
 		{this.abilityPower = abilityPower;}
-
-
-
 
 	//Get methods for name and power simply return their value
 	public String getAbilityName()
 	 {return abilityName;}
+	
 	public int getAbilityPower()
 	 {return abilityPower;}
 

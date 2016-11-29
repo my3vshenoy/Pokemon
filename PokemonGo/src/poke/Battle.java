@@ -41,15 +41,24 @@ public class Battle {
 
 	
 	//This matrix (or 2-dimensional array) stores the type-based damage multipliers to be used in battle 
-	double[][] multiplier = {{1,2,1,1,0.5,0.5,0.5,0.5,0.5,2,1,1,1,0.5,2,1,0.5,1,1},
-				{1,0.5,1,1,0.5,0.5,1,1,2,1,1,1,1,1,2,1,1,1,1},{1,1,2,1,0,1,1,1,1,1,1,1,1,1,1,1,0.5,1,1},
-				{1,1,0.5,0.5,1,1,1,2,1,0.5,0,1,1,1,1,1,1,2,1},{1,2,2,1,1,2,0.5,1,1,1,1,1,1,0.5,1,1,0.5,1,1},
-				{0.5,2,1,1,0.5,1,1,0.5,0,1,1,2,2,0.5,0.5,2,2,1,1},{2,1,0.5,1,1,1,0.5,1,1,2,1,2,1,1,1,0.5,2,0.5,1},
-				{2,1,1,0.5,1,2,1,1,1,2,1,1,1,1,1,0.5,0.5,1,1},{1,0.5,1,1,1,1,1,1,2,1,1,1,0,1,2,1,1,1,1},
-				{0.5,1,0.5,1,1,1,0.5,0.5,1,0.5,2,1,1,0.5,1,2,0.5,2,1},{0.5,1,1,2,1,1,2,0,1,0.5,1,1,1,2,1,2,2,1,1},
-				{1,1,2,1,1,1,0.5,2,1,2,2,0.5,1,1,1,1,0.5,0.5,1},{1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,0.5,0.5,1,1},
-				{1,1,1,1,2,1,1,1,0.5,2,0.5,1,1,0.5,1,0.5,0,1,1},{1,0,1,1,1,2,1,1,1,1,1,1,1,2,0.5,1,0.5,1,1},
-				{2,1,1,1,1,0.5,2,2,1,1,0.5,2,1,1,1,1,0.5,1,1},{1,1,1,0.5,2,1,0.5,1,1,1,1,2,1,1,1,2,0.5,0.5,1},
+	double[][] multiplier = {
+				{1,2,1,1,0.5,0.5,0.5,0.5,0.5,2,1,1,1,0.5,2,1,0.5,1,1},
+				{1,0.5,1,1,0.5,0.5,1,1,2,1,1,1,1,1,2,1,1,1,1},
+				{1,1,2,1,0,1,1,1,1,1,1,1,1,1,1,1,0.5,1,1},
+				{1,1,0.5,0.5,1,1,1,2,1,0.5,0,1,1,1,1,1,1,2,1},
+				{1,2,2,1,1,2,0.5,1,1,1,1,1,1,0.5,1,1,0.5,1,1},
+				{0.5,2,1,1,0.5,1,1,0.5,0,1,1,2,2,0.5,0.5,2,2,1,1},
+				{2,1,0.5,1,1,1,0.5,1,1,2,1,2,1,1,1,0.5,2,0.5,1},
+				{2,1,1,0.5,1,2,1,1,1,2,1,1,1,1,1,0.5,0.5,1,1},
+				{1,0.5,1,1,1,1,1,1,2,1,1,1,0,1,2,1,1,1,1},
+				{0.5,1,0.5,1,1,1,0.5,0.5,1,0.5,2,1,1,0.5,1,2,0.5,2,1},
+				{0.5,1,1,2,1,1,2,0,1,0.5,1,1,1,2,1,2,2,1,1},
+				{1,1,2,1,1,1,0.5,2,1,2,2,0.5,1,1,1,1,0.5,0.5,1},
+				{1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,0.5,0.5,1,1},
+				{1,1,1,1,2,1,1,1,0.5,2,0.5,1,1,0.5,1,0.5,0,1,1},
+				{1,0,1,1,1,2,1,1,1,1,1,1,1,2,0.5,1,0.5,1,1},
+				{2,1,1,1,1,0.5,2,2,1,1,0.5,2,1,1,1,1,0.5,1,1},
+				{1,1,1,0.5,2,1,0.5,1,1,1,1,2,1,1,1,2,0.5,0.5,1},
 				{1,1,0.5,1,1,1,2,1,1,0.5,2,1,1,1,1,2,1,0.5,1}};
 	
 	//Initialize every ability-type object that will be used in this game
@@ -109,8 +118,6 @@ public class Battle {
 	
 	//Create an array to store all of those abilities
 	Ability[] abilityList		
-
-	
 	
 	EvolvablePokemon Bulbasaur = new EvolvablePokemon("Bulbasaur","Grass","None",abilityList[18],abilityList[24],126,220,1,3,Ivysaur);
 	EvolvablePokemon Ivysaur = new EvolvablePokemon("Ivysaur","Grass","Poison",abilityList[18],abilityList[19],156,350,3,100,Ivysaur);
@@ -120,6 +127,7 @@ public class Battle {
 	EvolvablePokemon Charmeleon = new EvolvablePokemon("Charmeleon","Fire","None",abilityList[42],abilityList[47],160,350,3,100,Charmeleon);
 	EvolvablePokemon Scyther = new EvolvablePokemon("Scyther","Bug","Flying",abilityList[30],abilityList[13],176,250,1,3Scizor);
 	EvolvablePokemon Scizor = new EvolvablePokemon("Scizor","Bug","Steel",abilityList[3],abilityList[34],210,400,4,100,Scizor);
+	
 	Pokemon Onix = new Pokemon("Onix","Ground","Rock",abilityList[31],abilityList[21],90,480,2);
 	Pokemon Electabuzz = new Pokemon("Electabuzz","Electric","None",abilityList[6],abilityList[7],198,325,3);
 	Pokemon Haunter = new Pokemon("Haunter","Ghost","Poison",abilityList[15],abilityList[16],172,400,4);
@@ -159,38 +167,38 @@ public class Battle {
 	System.out.println("What will you do?");
 	System.out.printf(" 1: Attack %n 2: Use Potion%n 3: Use Pokeball");
 	
-	//accept's the user's selection and stores it locally
-		Scanner reader = new Scanner (System.in);
-		int selection = reader.nextInt();
-			
-	//Applies the user's selection, and names the user's first pokemon accordingly
-		switch(selection)
-			{
-		case 1://TODO write formula to pull th us
-			int damage = //Damage= (abilityPower*Strength*multiplier1*multiplier2)/100
-			opponentPokemon.setHP(HP=HP-damage)
-			break;
-		case 2: //display the list of Potion items
-				//accept input from the user
-				//use another switch statement to call the usePotion method of the selected potion
-			break;
-		case 3: 
-//need better error correction 
-  			//prompt pokeball selection
-  			System.out.println("Which type of pokeball do you want to use: (choose from 1~3)");
-  			System.out.printf("1. Pokeball(%d)%n2. Greatball(%d)%n3. Ultraball(%d)%n", 
-  				quantityBall[1], quantityBall[2], quantityBall[3]);
-  			//accept input from the user
-  			ballSelection = new Scanner(System.in).nextInt();
-  			System.out.println();
-  			//reduce pokeball count by 1
-  			if(quantityBall[ballSelection]>0)
-  				quantityBall[ballSelection]--;
-//need some catch rate formula  			
-  			else
-  				System.out.printf("You are out of %ss. You lost your turn.%n%n", pokeball[ballSelection]);  					
-			break;
-		default: System.out.println("That is not a valid selection. What would you like to do?");
-			}
-	}
+//	//accept's the user's selection and stores it locally
+//		Scanner reader = new Scanner (System.in);
+//		int selection = reader.nextInt();
+//			
+//	//Applies the user's selection, and names the user's first pokemon accordingly
+//		switch(selection)
+//			{
+//		case 1://TODO write formula to pull th us
+//			int damage = //Damage= (abilityPower*Strength*multiplier1*multiplier2)/100
+//			opponentPokemon.setHP(HP=HP-damage)
+//			break;
+//		case 2: //display the list of Potion items
+//				//accept input from the user
+//				//use another switch statement to call the usePotion method of the selected potion
+//			break;
+//		case 3: 
+////need better error correction 
+//  			//prompt pokeball selection
+//  			System.out.println("Which type of pokeball do you want to use: (choose from 1~3)");
+//  			System.out.printf("1. Pokeball(%d)%n2. Greatball(%d)%n3. Ultraball(%d)%n", 
+//  				quantityBall[1], quantityBall[2], quantityBall[3]);
+//  			//accept input from the user
+//  			ballSelection = new Scanner(System.in).nextInt();
+//  			System.out.println();
+//  			//reduce pokeball count by 1
+//  			if(quantityBall[ballSelection]>0)
+//  				quantityBall[ballSelection]--;
+////need some catch rate formula  			
+//  			else
+//  				System.out.printf("You are out of %ss. You lost your turn.%n%n", pokeball[ballSelection]);  					
+//			break;
+//		default: System.out.println("That is not a valid selection. What would you like to do?");
+//			}
+//	}
 }
