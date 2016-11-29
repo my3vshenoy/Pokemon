@@ -13,8 +13,11 @@ public class Battle {
 	//initialize pokeballs
 	String[] pokeball = {"", "Pokeball", "Greatball", "Ultraball"};
 	int[] quantityBall = {0, 3, 3, 3};
-	double[] catchRate = {0, 1, 1.5, 2};
-	int ballSelection = 0;	
+	double[] ballModifier = {0, 1, 1.1, 1.2};
+	int ballSelection = 0;
+	double catchRate = 0.0;
+	int maxHP1 = 0;
+	int maxHP2 = 0;	
 		
 	//initialize and array of String variables to store the names of the types
 	//This will be necessary to look up those types in the "multiplier" matrix that follows
@@ -193,8 +196,15 @@ public class Battle {
 //  			System.out.println();
 //  			//reduce pokeball count by 1
 //  			if(quantityBall[ballSelection]>0)
-//  				quantityBall[ballSelection]--;
-////need some catch rate formula  			
+//				{
+//					quantityBall[ballSelection]--;
+//					catchRate = (maxHP2 - pokemon2.getHP()) / maxHP2 * ballModifier[ballSelection]; 
+//					if(catchRate >= 0.85)
+//						System.out.printf("You caught %s!%n", pokemon2.getName());
+//					else
+//						System.out.printf("You did not catch %s!%n", pokemon2.getName());
+//				}
+//			
 //  			else
 //  				System.out.printf("You are out of %ss. You lost your turn.%n%n", pokeball[ballSelection]);  					
 //			break;
