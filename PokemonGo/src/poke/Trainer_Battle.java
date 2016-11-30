@@ -1,4 +1,4 @@
-package Final_Project;
+package poke;
 
 public class Trainer_Battle extends Battle{
 //This class is similar to the Wild_Battle, but involves another trainer
