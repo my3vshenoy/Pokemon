@@ -1,7 +1,7 @@
 
 package poke;
 
-public class Pokemon {
+public class Pokemon implements Leveled_Object{
 
 	/**
 	 * @param args
@@ -19,11 +19,11 @@ public class Pokemon {
 	private Ability ability2;
 	private int strength;
 	private int HP;
-	private int exp;
+	private int experience;
 	private int level;
 
 	//constructor initializes the variables
-	public Pokemon (String name, String type1, String type2, Ability ability1, Ability ability2, int strength, int HP, int level)
+	public Pokemon (String name, String type1, String type2, Ability ability1, Ability ability2, int strength, int HP, int experience, int level)
 	{
 		this.name = name;
 		this.type1= type1;
@@ -32,6 +32,7 @@ public class Pokemon {
 		this.ability2 = ability2;
 		this.strength = strength;
 		this.HP = HP;
+		this.experience= experience;
 		this.level= level;
 	}
 
@@ -57,6 +58,9 @@ public class Pokemon {
 	public void setStrength(int strength)
 	{this.strength = strength;}
 	
+	public void setexperience(int experience)
+	{this.experience = experience;}
+	
 	public void setLevel(int level)
 	{this.level = level;}
 
@@ -81,6 +85,9 @@ public class Pokemon {
 
 	public int getStrength()
 	{return strength;}
+	
+	public int getexperience()
+	{return experience;}
 
 	public int getLevel()
 	{return level;}
@@ -123,7 +130,17 @@ public class Pokemon {
 		public Pokemon getPokemonAfterEvolution(){
 			return pokemonAfterEvolution;
 		}
-
+		
+		//We should go over how gainExperience works. Where is the "amount" variable determined?
+		//The "amount" of experience gained should be some multiplier of the opponentPokemon's level
+		//For instance:
+		//amount=opponentPokemon.getLevel*10
+		public void gainExperience(int amount){
+			
+			this.experience+=amount;
+			while(enoughXPForNextLevel()) 
+				levelUP();
+			
 		public void levelUP(){
 			super.levelUP();
 			if (enoughLevelForEvolution())

@@ -49,6 +49,7 @@ public class Player implements Leveled_Object{
 	
 	private void getLevelUPreward(int level){
 		//For now provide credit to buy more stuff from store
+		//If we have time, we should give the player a new potion or Pokeball
 		System.out.println("You gained new items as reward for Level "+getLevel()+": Free Pokemon Credit of"+ (Math.random()*20));
 	}
 
