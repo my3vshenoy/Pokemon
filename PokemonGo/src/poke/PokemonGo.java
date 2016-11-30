@@ -29,6 +29,30 @@ public class PokemonGo {
 				case 2: //display the list of Potion items
 						//accept input from the user
 						//use another switch statement to call the usePotion method of the selected potion
+					String Potion;
+					System.out.println("Choose your potion: /n 1 - Potion1/n 2 - Potion2/n 3 - Potion3");
+					String Potion1, Potion2, Potion3;
+					Scanner reader1 = new Scanner (System.in);
+					String input = reader1. nextLine();
+					
+					if (Potion==Potion1)
+					{Pokemon.getHP
+							settHP(HP=HP*2);
+							}
+					else if(Potion==Potion2)
+					{
+							setHP(HP=HP*4);
+							}
+					else if (Potion==Potion3)
+					{
+							setHP(HP=HP*4);
+							}
+					else
+					{
+						System.out.println("Invalid Potion");
+					}
+						//accept input from the user
+						//use another switch statement to call the usePotion method of the selected potion
 					break;
 				case 3: 
 		//need better error correction 
