@@ -120,7 +120,12 @@ public class Battle {
 	Ability ability50 = new Ability("Thunder Punch","Electric",75);
 	
 	//Create an array to store all of those abilities
-	Ability[] abilityList		
+	Ability[] abilityList(ability0,ability1,ability2,ability3,ability4,ability5,ability6,ability7,ability8,ability9,ability10,
+			ability11,ability12,ability13,ability14,ability15,ability16,ability17,ability18,ability19,ability20,ability21,ability22,
+			ability23,ability24,ability25,ability26,ability27,ability28,ability29,ability30,ability31,ability32,ability33,ability34,
+			ability35,ability36,ability37,ability38,ability39,ability40,ability41,ability42,ability43,ability44,ability45,ability46,
+			ability47,ability48,ability49,ability50,);
+
 	
 	EvolvablePokemon Bulbasaur = new EvolvablePokemon("Bulbasaur","Grass","None",abilityList[18],abilityList[24],126,220,1,3,Ivysaur);
 	EvolvablePokemon Ivysaur = new EvolvablePokemon("Ivysaur","Grass","Poison",abilityList[18],abilityList[19],156,350,3,100,Ivysaur);
@@ -161,7 +166,10 @@ public class Battle {
 	Pokemon Mankey = new Pokemon("Mankey","Fighting","None",abilityList[10],abilityList[26],122,220,3);
 	
 	//Create an array to store all of the pokemon
-	Pokemon[] pokemonList;
+	Pokemon[] pokemonList=(Bulbasaur,Ivysaur,Squirtle,Wartortle,Charmander,Charmeleon,Scyther,Scizor,Onix,Electabuzz,Haunter,Lapras,
+			Hitmonchan,Hitmonlee,Drowzee,Snorlax,Mew,Jigglypuff,Zapdos,Articuno,Moltres,Hippowodon,Absol,Magnemite,Goodra,Diglett,
+			Pinsir,Shuckle,Tauros,Magmar,Starmie,Aerodactyl,Muk,Aggron,Tropius,Mankey)
+
 		
 //MAIN METHOD		
 	

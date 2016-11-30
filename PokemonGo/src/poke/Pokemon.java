@@ -19,10 +19,11 @@ public class Pokemon {
 	private Ability ability2;
 	private int strength;
 	private int HP;
+	private int exp;
 	private int level;
 
 	//constructor initializes the variables
-	public Pokemon (String name, String type1, String type2, String ability1, String ability2, int strength, int HP, int level)
+	public Pokemon (String name, String type1, String type2, Ability ability1, Ability ability2, int strength, int HP, int level)
 	{
 		this.name = name;
 		this.type1= type1;
@@ -44,10 +45,10 @@ public class Pokemon {
 	public void setType2(String type2)
 	{this.type2 = type2;}
 	
-	public void setAbility1(String ability1)
+	public void setAbility1(Ability ability1)
 	{this.ability1 = ability1;}
 	
-	public void setAbility2(String ability2)
+	public void setAbility2(Ability ability2)
 	{this.ability2 = ability2;}
 	
 	public void setHP(int HP)
@@ -69,10 +70,10 @@ public class Pokemon {
 	public String getType2()
 	{return type2;}
 
-	public String getAbility1()
+	public Ability getAbility1()
 	{return ability1;}
 
-	public String getAbility2()
+	public Ability getAbility2()
 	{return ability2;}
 
 	public int getHP()

@@ -7,7 +7,7 @@ public class EvolvablePokemon extends Pokemon
 	{
 		super(n, cp, a, hp);
 		pokemonAfterEvolution=eo1;
-	}
+	}//testing
 	public void evolve()
 	{
 		name=pokemonAfterEvolution.name;
