@@ -43,9 +43,11 @@ public class PokemonGo {
 		  			if(quantityBall[ballSelection]>0)
 		  			{
 		  				quantityBall[ballSelection]--;
-	  					catchRate = (maxHP2 - pokemon2.getHP()) / maxHP2 * ballModifier[ballSelection]; 
+	  					catchRate = (maxHP2 - (double) pokemon2.getHP()) / maxHP2 * ballModifier[ballSelection]; 
 	  					if(catchRate >= 0.85)
+	  						{
 	  						System.out.printf("You caught %s!%n", pokemon2.getName());
+	  						}
 	  					else
 	  						System.out.printf("You did not catch %s!%n", pokemon2.getName());
 					}
