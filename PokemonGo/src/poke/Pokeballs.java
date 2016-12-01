@@ -1,3 +1,4 @@
+package poke;
 import java.util.Scanner;
 
 public class Pokeballs 
