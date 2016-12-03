@@ -192,7 +192,34 @@ public class Battle {
 //		case 2: //display the list of Potion items
 //				//accept input from the user
 //				//use another switch statement to call the usePotion method of the selected potion
-//			break;
+			if(turn == 1)
+			{
+				System.out.println(userPotion.getQuantityPotion());
+				userPotion.usePotions();
+				if(userPotion.getQuantityPotion() > 0)
+				{
+					userPokemon.setHP(userPokemon.getHP() + userPotion.getHPRestored());
+					System.out.printf("%n%s restored %d HP by using a %s. %s now has %d HP.%n", 
+						userPokemon.getName(), userPotion.getHPRestored(), userPotion.getPotion(), 
+						userPokemon.getName(), userPokemon.getHP());
+				}
+				else
+					{System.out.printf("%nYou are out of %ss. You lost your turn.%n", userPotion.getPotion());}
+			}
+			else
+			{
+				if(opponentPotion.getQuantityPotion() > 0)
+				{
+					opponentPotion.usePotions();
+					opponentPokemon.setHP(opponentPokemon.getHP() + opponentPotion.getHPRestored());	
+					System.out.printf("%n%s restored %d HP by using a %s. %s now has %d HP.%n", 
+							opponentPokemon.getName(), opponentPotion.getHPRestored(), opponentPotion.getPotion(), 
+							opponentPokemon.getName(), opponentPokemon.getHP());
+				}
+				else
+					{System.out.printf("%nYou are out of %ss. You lost your turn.%n", opponentPotion.getPotion());}
+			}
+			break;
 //		case 3: 
 ////need better error correction 
 //  			//prompt pokeball selection
