@@ -46,7 +46,7 @@ public class Pokeballs
 		//reduce pokeball count by 1
 		if(quantityBallArray[ballSelection]>0)
 		{
-
+<<<<<<< HEAD
 			quantityBallArray[ballSelection]--;
 			catchRate = (double) opponentPokemon.getHP() / maxHP - ballModifierArray[ballSelection]; 
 			if(catchRate <= 0.25)
@@ -57,12 +57,12 @@ public class Pokeballs
 			else
 				System.out.printf("You did not catch %s!%n", opponentPokemon.getName());
 		}			
-
+=======
 			quantityBall = quantityBallArray[ballSelection]--;
 			pokeball = pokeballArray[ballSelection];
 			ballModifier = ballModifierArray[ballSelection];
 		}
-
+>>>>>>> 7180f6113a778ec12b4826ab62adcf0feff2b362
 		else
 		{
 			quantityBall = 0;

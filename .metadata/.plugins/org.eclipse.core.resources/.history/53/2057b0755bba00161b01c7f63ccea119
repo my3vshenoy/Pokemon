@@ -12,6 +12,7 @@ public class Battle {
 	
 
 
+<<<<<<< HEAD
 			//initialize pokeballs
 			//String[] pokeball = {"", "Pokeball", "Greatball", "Ultraball"};
 			//int[] quantityBall = {0, 3, 3, 3};
@@ -225,7 +226,7 @@ public class Battle {
 			//		default: System.out.println("That is not a valid selection. What would you like to do?");
 			//			}
 			//	}
-
+=======
 		
 //MAIN METHOD		
 	
@@ -302,5 +303,5 @@ public class Battle {
 //		default: System.out.println("That is not a valid selection. What would you like to do?");
 //			}
 //	}
-
+>>>>>>> 7180f6113a778ec12b4826ab62adcf0feff2b362
 }
