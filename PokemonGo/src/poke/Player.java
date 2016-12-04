@@ -5,11 +5,13 @@ public class Player implements Leveled_Object{
 	private String name;
 	private int level;
 	private int experience;
+	private int money;
 	
 	public Player(String name){
 		this.name=name;
 		this.level=1;
 		this.experience=0;
+		this.money = 100;
 	}
 	
 	public String getName(){
@@ -50,7 +52,9 @@ public class Player implements Leveled_Object{
 	private void getLevelUPreward(int level){
 		//For now provide credit to buy more stuff from store
 		//If we have time, we should give the player a new potion or Pokeball
-		System.out.println("You gained new items as reward for Level "+getLevel()+": Free Pokemon Credit of"+ (Math.random()*20));
+		int credit =(int)(Math.random()*20);
+		System.out.println("You gained new items as reward for Level "+getLevel()+": Free Pokemon Credit of"+ credit );
+		this.money += credit; 
 	}
 
 }

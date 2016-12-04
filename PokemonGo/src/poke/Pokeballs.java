@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Pokeballs 
 {
 	private String[] pokeballArray = {"", "Pokeball", "Greatball", "Ultraball"};
-	private String pokeball = "";
+	private String pokeballName = "";
 	private int[] quantityBallArray = {0, 3, 3, 3};
 	private int quantityBall = 0;
 	private double[] ballModifierArray = {0, 0, 0.1, 0.2};
@@ -13,9 +13,9 @@ public class Pokeballs
 	private double catchRate = 0.0;
 	private int maxHP = 100;
 
-	public Pokeballs (String pokeball, int quantityBall, double ballModifier)
+	public Pokeballs (String pokeballName, int quantityBall, double ballModifier)
 	{
-		this.pokeball = pokeball;
+		this.pokeballName = pokeballName;
 		this.quantityBall = quantityBall;
 		this.ballModifier = ballModifier;
 	}
@@ -50,7 +50,7 @@ public class Pokeballs
 			if(catchRate <= 0.25)
 			{
 				System.out.printf("You caught %s!%n", opponentPokemon.getName());
-				//If you catch the pokemon, need way to exit battle
+				//If you catch the pokemon, the opponent pokemon should be added to the player's team
 			}
 			else
 				System.out.printf("You did not catch %s!%n", opponentPokemon.getName());
