@@ -8,20 +8,20 @@ public class Battle {
 	public String selectedAbility;
 	public Pokemon userPokemon;
 	public Pokemon opponentPokemon;
-	public Battle(){	
+
 
 	//initialize pokeballs
-	String[] pokeball = {"", "Pokeball", "Greatball", "Ultraball"};
-	int[] quantityBall = {0, 3, 3, 3};
-	double[] ballModifier = {0, 1, 1.1, 1.2};
-	int ballSelection = 0;
-	double catchRate = 0.0;
-	int maxHP1 = 0;
-	int maxHP2 = 0;	
+	//String[] pokeball = {"", "Pokeball", "Greatball", "Ultraball"};
+	//int[] quantityBall = {0, 3, 3, 3};
+	//double[] ballModifier = {0, 1, 1.1, 1.2};
+	//int ballSelection = 0;
+	//double catchRate = 0.0;
+	//int maxHP1 = 0;
+	//int maxHP2 = 0;	
 		
 	//initialize and array of String variables to store the names of the types
 	//This will be necessary to look up those types in the "multiplier" matrix that follows
-	String[] types;
+	String[] types;{
 		types[0]="Bug";
 		types[1]="Dark";
 		types[2]="Dragon";
@@ -40,7 +40,7 @@ public class Battle {
 		types[15]="Rock";
 		types[16]="Steel";
 		types[17]="Water";
-		types[18]="None";
+		types[18]="None";}
 
 	
 	//This matrix (or 2-dimensional array) stores the type-based damage multipliers to be used in battle 
@@ -66,9 +66,9 @@ public class Battle {
 	
 	//Initialize every ability-type object that will be used in this game
 	//
-	
-	Ability ability0 = new Ability("Bug Bite","Bug",30);
-	Ability ability1 = new Ability("Struggle Bug","Bug",60);
+	Ability[] abilityList;{
+	new Ability("Bug Bite","Bug",30);
+	abilityList[1] = new Ability("Struggle Bug","Bug",60);
 	Ability ability2 = new Ability("Bite","Dark",60);
 	Ability ability3 = new Ability("Night Slash","Dark",85);
 	Ability ability4 = new Ability("Dragon Rage","Dragon",90);
@@ -118,15 +118,16 @@ public class Battle {
 	Ability ability48 = new Ability("Bullet Punch","Fighting",60);
 	Ability ability49 = new Ability("Magnet Bomb","Steel",70);
 	Ability ability50 = new Ability("Thunder Punch","Electric",75);
+	}
+
 	
-	//Create an array to store all of those abilities
-	Ability[] abilityList(ability0,ability1,ability2,ability3,ability4,ability5,ability6,ability7,ability8,ability9,ability10,
+	ability0,ability1,ability2,ability3,ability4,ability5,ability6,ability7,ability8,ability9,ability10,
 			ability11,ability12,ability13,ability14,ability15,ability16,ability17,ability18,ability19,ability20,ability21,ability22,
 			ability23,ability24,ability25,ability26,ability27,ability28,ability29,ability30,ability31,ability32,ability33,ability34,
 			ability35,ability36,ability37,ability38,ability39,ability40,ability41,ability42,ability43,ability44,ability45,ability46,
-			ability47,ability48,ability49,ability50,);
+			ability47,ability48,ability49,ability50}
 
-	
+	//Andrew will fix this list so that the constructor works	
 	EvolvablePokemon Bulbasaur = new EvolvablePokemon("Bulbasaur","Grass","None",abilityList[18],abilityList[24],126,220,1,3,Ivysaur);
 	EvolvablePokemon Ivysaur = new EvolvablePokemon("Ivysaur","Grass","Poison",abilityList[18],abilityList[19],156,350,3,100,Ivysaur);
 	EvolvablePokemon Squirtle = new EvolvablePokemon("Squirtle","Water","None",abilityList[25],abilityList[36],112,220,1,3Wartortle);
@@ -136,6 +137,7 @@ public class Battle {
 	EvolvablePokemon Scyther = new EvolvablePokemon("Scyther","Bug","Flying",abilityList[30],abilityList[13],176,250,1,3Scizor);
 	EvolvablePokemon Scizor = new EvolvablePokemon("Scizor","Bug","Steel",abilityList[3],abilityList[34],210,400,4,100,Scizor);
 	
+
 	Pokemon Onix = new Pokemon("Onix","Ground","Rock",abilityList[31],abilityList[21],90,480,2);
 	Pokemon Electabuzz = new Pokemon("Electabuzz","Electric","None",abilityList[6],abilityList[7],198,325,3);
 	Pokemon Haunter = new Pokemon("Haunter","Ghost","Poison",abilityList[15],abilityList[16],172,400,4);
