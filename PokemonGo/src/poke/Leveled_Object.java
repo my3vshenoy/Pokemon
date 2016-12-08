@@ -10,7 +10,7 @@ public interface Leveled_Object {
 	    
 		//Declaration of methods that will be implemented in the classes that implement this interface
 		String getName();
-		void gainExperience(int amount);
-		void levelUP();
-		boolean enoughXPForNextLevel();
+		public void gainExperience(int amount);
+		public void levelUP();
+		public boolean enoughXPForNextLevel();
 }

@@ -17,13 +17,14 @@ public class Pokemon implements Leveled_Object{
 	private String type2;
 	private Ability ability1;
 	private Ability ability2;
-	private int strength;
-	private int HP;
-	private int experience;
+	private double strength;
+	private double HP;
+	private double experience;
 	private int level;
 
 	//constructor initializes the variables
-	public Pokemon (String name, String type1, String type2, Ability ability1, Ability ability2, int strength, int HP, int experience, int level)
+	public Pokemon (String name, String type1, String type2, Ability ability1, Ability ability2, 
+			int strength, int HP, int experience, int level)
 	{
 		this.name = name;
 		this.type1= type1;
@@ -52,13 +53,13 @@ public class Pokemon implements Leveled_Object{
 	public void setAbility2(Ability ability2)
 	{this.ability2 = ability2;}
 	
-	public void setHP(int HP)
+	public void setHP(double HP)
 	{this.HP = HP;}	
 	
-	public void setStrength(int strength)
+	public void setStrength(double strength)
 	{this.strength = strength;}
 	
-	public void setexperience(int experience)
+	public void setexperience(double experience)
 	{this.experience = experience;}
 	
 	public void setLevel(int level)
@@ -80,108 +81,29 @@ public class Pokemon implements Leveled_Object{
 	public Ability getAbility2()
 	{return ability2;}
 
-	public int getHP()
+	public double getHP()
 	{return HP;}	
 
-	public int getStrength()
+	public double getStrength()
 	{return strength;}
 	
-	public int getexperience()
+	public double getexperience()
 	{return experience;}
 
 	public int getLevel()
 	{return level;}
 
-
-	class EvolvablePokemon extends Pokemon{
-
-		private EvolvablePokemon pokemonAfterEvolution;
-		private final int EvolutionLevel;
-
-		public EvolvablePokemon(String name, String type1, String type2, Ability ability1, Ability ability2, 
-				int strength, int level, int evolutionLevel, EvolvablePokemon poke){
-
-			//Initializing the superclass constructor bottom up
-			super(name, type1, type2, ability1, ability2, strength, level);
-			this.pokemonAfterEvolution = poke;
-		}
-
-		//Method to evolve the pokemon 
-		//This must be updated to fit the leveling system
-		public void evolve(){
-
-			name = pokemonAfterEvolution.name;
-			combatPower = pokemonAfterEvolution.combatPower;
-			ability = pokemonAfterEvolution.ability;
-			hitPoint = pokemonAfterEvolution.hitPoint;
-
-		}
-
-		//	private Pokemon pokemonAfterEvolution;
-
-
-		//	public EvolvablePokemon(String name, double combatPower, String abilityName, int HP, Pokemon nextPokemon, int level)
-		//	{
-		//		super(name,combatPower,abilityName,HP);
-		//		this.pokemonAfterEvolution=nextPokemon;
-		//		this.EvolutionLevel=level;
-		//	}
-
-		public Pokemon getPokemonAfterEvolution(){
-			return pokemonAfterEvolution;
-		}
-		
-		//We should go over how gainExperience works. Where is the "amount" variable determined?
-		//The "amount" of experience gained should be some multiplier of the opponentPokemon's level
-		//For instance:
-		//amount=opponentPokemon.getLevel*10
-		public void gainExperience(int amount){
-			
-			this.experience+=amount;
-			while(enoughXPForNextLevel()) 
-				levelUP();
-			
-		public void levelUP(){
-			super.levelUP();
-			if (enoughLevelForEvolution())
-				evolve();
-		}
-
-		private boolean enoughLevelForEvolution(){
-			return getLevel()==EvolutionLevel;
-		}
-
-		public void evolve(){
-			if(pokemonAfterEvolution!=null){
-				String oldName=getName();
-				String newName=pokemonAfterEvolution.getName();
-				
-				double newCP=pokemonAfterEvolution.getCP();
-				
-				Ability newAbility=pokemonAfterEvolution.getAbility();
-				
-				int newHP=pokemonAfterEvolution.getHP();
-				
-				Pokemon newPokemon=null;
-				
-				if(pokemonAfterEvolution instanceof EvolvablePokemon)
-					newPokemon=((EvolvablePokemon)pokemonAfterEvolution).getPokemonAfterEvolution();
-
-				setName(newName);
-				setCP(newCP);
-				setAbility(newAbility.getAbilityName());
-				this.pokemonAfterEvolution=newPokemon;
-				System.out.println("\nCongratulations! "+oldName+" has evolved into "+newName+"!\n");
-			}
-			else{
-				System.out.println("The pokemon does not evolve!");
-			}
-		}
-
-		public String toString(){
-			return super.toString();
-		}
-
+	//Increases the level of the pokemon by 1
+	//Also increases the HP and strength stats by 10% of previous value
+	public void levelUP(){
+		HP=HP*1.1;
+		strength=strength*1.1;
+		level=level++;	
 	}
-
+	public void gainExperience(int amount) {
+	}
+	public boolean enoughXPForNextLevel() {
+		return false;
+	}
+}
 
