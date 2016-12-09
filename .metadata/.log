@@ -1266,6 +1266,7 @@ org.eclipse.core.internal.resources.ResourceException: Resource '/PokemonGo/src/
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2016-11-21 14:25:05.637
 !MESSAGE Resource '/PokemonGo/src/poke/PokemonGo.java' does not exist.
+<<<<<<< Updated upstream
 !SESSION 2016-11-30 19:12:48.789 -----------------------------------------------
 eclipse.buildId=4.3.0.M20130911-1000
 java.version=1.8.0_101
@@ -3827,3 +3828,31 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+=======
+!SESSION 2016-11-30 19:07:30.509 -----------------------------------------------
+eclipse.buildId=4.6.0.I20160606-1100
+java.version=1.8.0_101
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -keyring /Users/my3shenoy/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -data /Users/my3shenoy/Documents/Workspace/Workspace 2/Pokemon -product org.eclipse.epp.package.java.product -keyring /Users/my3shenoy/.eclipse_keyring
+
+!ENTRY org.eclipse.core.resources 2 10035 2016-11-30 19:07:35.998
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-11-30 19:07:51.488
+!MESSAGE 
+
+Agreeing to the Xcode/iOS license requires admin privileges, please re-run as root via sudo.
+
+
+
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-11-30 19:07:51.599
+!MESSAGE 
+
+Agreeing to the Xcode/iOS license requires admin privileges, please re-run as root via sudo.
+
+
+
+>>>>>>> Stashed changes

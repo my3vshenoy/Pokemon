@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 INDEX VERSION 1.126+C:\Users\Andrew\Documents\UMass\Oobject-oriented systems\Pokemon\.metadata\.plugins\org.eclipse.jdt.core
 1644702904.index
 414978335.index
