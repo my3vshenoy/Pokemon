@@ -1,3 +1,8 @@
+package poke;
+import java.util.Scanner;
+
+import static java.lang.System.out;
+
 public class PokeStore {
 	public String[] itemsForSale;{"Pokeball","Greatball","Ultraball","Potion","Super Potion","Hyper Potion"};
 	public int[] priceList;
