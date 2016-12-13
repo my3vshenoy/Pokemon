@@ -3,6 +3,7 @@
 	<name>poke</name>
 	<comment></comment>
 	<projects>
+		<project>PokemonGo</project>
 	</projects>
 	<buildSpec>
 	</buildSpec>

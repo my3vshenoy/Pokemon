@@ -1,41 +1,47 @@
 package poke;
 import java.util.Scanner;
+import java.awt.EventQueue;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.io.*;
+import java.io.IOException;
+//
 
-import poke.Battle;
-
+import javax.imageio.ImageIO;
+import javax.swing.JComponent;
+import javax.swing.JFrame;
 
 public class PokemonGo {
 
-	
-	
 	public static void main(String[] args) {
-		Pokemon[] pokemonTeamBefore;
-		Pokemon[] pokemonTeamAfter;
+
+		Pokemon[] pokemonTeamBefore = new Pokemon[100];
+		Pokemon[] pokemonTeamAfter = new Pokemon[100];
 		Potions potions = new Potions(null,0,0);
 		Pokeballs pokeballs = new Pokeballs(null,0,0);
 		Battle batteObj = new Battle();
 		EvolvablePokemon ePokemon = new EvolvablePokemon("Ivysaur","Grass","Poison",null,null,156,350,0,3,100,null);
 
-		String[] types;{
-			types[0]="Bug";
-			types[1]="Dark";
-			types[2]="Dragon";
-			types[3]="Electric";
-			types[4]="Fairy";
-			types[5]="Fighting";
-			types[6]="Fire";
-			types[7]="Flying";
-			types[8]="Ghost";
-			types[9]="Grass";
-			types[10]="Ground";
-			types[11]="Ice";
-			types[12]="Normal";
-			types[13]="Poison";
-			types[14]="Psychic";
-			types[15]="Rock";
-			types[16]="Steel";
-			types[17]="Water";
-			types[18]="None";}
+		String types[] = new String [19];
+		types[0]="Bug";
+		types[1]="Dark";
+		types[2]="Dragon";
+		types[3]="Electric";
+		types[4]="Fairy";
+		types[5]="Fighting";
+		types[6]="Fire";
+		types[7]="Flying";
+		types[8]="Ghost";
+		types[9]="Grass";
+		types[10]="Ground";
+		types[11]="Ice";
+		types[12]="Normal";
+		types[13]="Poison";
+		types[14]="Psychic";
+		types[15]="Rock";
+		types[16]="Steel";
+		types[17]="Water";
+		types[18]="None";
 
 
 		//Initialize every ability-type object that will be used in this game
@@ -99,7 +105,7 @@ public class PokemonGo {
 				ability35,ability36,ability37,ability38,ability39,ability40,ability41,ability42,ability43,ability44,ability45,ability46,
 				ability47,ability48,ability49,ability50};
 
-		//Initialize all of the pokemon objects	
+		//		//Initialize all of the pokemon objects	
 		EvolvablePokemon Ivysaur = new EvolvablePokemon("Ivysaur","Grass","Poison",abilityList[18],abilityList[19],156,350,0,3,100,null);
 		EvolvablePokemon Bulbasaur = new EvolvablePokemon("Bulbasaur","Grass","None",abilityList[18],abilityList[24],126,220,0, 1,3,Ivysaur);	
 		EvolvablePokemon Wartortle = new EvolvablePokemon("Wartortle","Water","None",abilityList[25],abilityList[38],144,350,0,3,100,null);
@@ -141,166 +147,166 @@ public class PokemonGo {
 		Pokemon[] pokemonList={Bulbasaur,Ivysaur,Squirtle,Wartortle,Charmander,Charmeleon,Scyther,Scizor,Onix,Electabuzz,Haunter,Lapras,
 				Hitmonchan,Hitmonlee,Drowzee,Snorlax,Mew,Jigglypuff,Zapdos,Articuno,Moltres,Hippowodon,Absol,Magnemite,Goodra,Diglett,
 				Pinsir,Shuckle,Tauros,Magmar,Starmie,Aerodactyl,Muk,Aggron,Tropius,Mankey};
-		
-		
-		
+
 		// This is the start of the user interface
 		//It will prompt the user to select a starting pokemon, 
 		//then add that pokemon to their team
 		System.out.println("Welcome to the world of Pokemon\n");
 		System.out.println("It's time to explore!");
 		System.out.println("But wait! It's dangerous out there! Take one of these:");
+
 		//Display images of the three starter pokemon
-		System.out.println("Which one will you choose?");
 		System.out.println(" 1: Bulbasaur  2: Squirtle  3: Charmander");
-		
+		System.out.println("Which one will you choose?");
+
 		//accepts the user's selection
-		Scanner reader1 = new Scanner (System.in);
-		int starterPokemon = reader1.nextInt();
-			
-		switch(starterPokemon){
-			case 1:
-				System.out.println("You've chosen Bulbasaur, the Grass-type!");
-				pokemonTeamBefore[0]=Bulbasaur;
-				break;
-			case 2: 
-				System.out.println("You've chosen Squirtle, the Water-type!");
-				pokemonTeamBefore[0]=Squirtle;
-				break;
-			case 3:
-				System.out.println("You've chosen Charmander, the Water-type!");
-				pokemonTeamBefore[0]=Charmander;
-				break;				
-			default:
-				System.out.println("That is not a valid selection. Please try again.");
-				return;
+				Scanner reader1 = new Scanner(System.in);
+				int selection = reader1.nextInt();
+				System.out.println(selection);
+
+
+		switch(selection){
+		case 1:
+			System.out.println("You've chosen Bulbasaur, the Grass-type!");
+			pokemonTeamBefore[0]=Bulbasaur;
+			break;
+		case 2: 
+			System.out.println("You've chosen Squirtle, the Water-type!");
+			pokemonTeamBefore[0]=Squirtle;
+			break;
+		case 3:
+			System.out.println("You've chosen Charmander, the Water-type!");
+			pokemonTeamBefore[0]=Charmander;
+			break;				
+		default:
+			System.out.println("That is not a valid selection. Please try again.");
+			return;
 		}
-		
+
 		//Ask the user if they would like to fight or go to the store
 		//What a bleak existence in which combat and consumerism are the only options
 		//Use a switch statement to call up whichever class the user chooses
 		System.out.println("Now that you have a Pokemon partner, you're ready for anything.");
 		System.out.println("What would you like to do");
 		System.out.println("1: Fight Wild Pokemon  2:Visit the PokeStore");
-		
-		Scanner reader2 = new Scanner (System.in);
-		int activitySelection = reader2.nextInt();
-			
-		switch(activitySelection){
-			case 1:
-				//call the Battle class
-				break;
-			case 2:
-				//call the PokeStore class
-			
+
+
+		selection = reader1.nextInt();
+		System.out.println(selection);
+
+		switch(selection){
+		case 1:
+			//call the Battle class
+			System.out.println("Inside Switch case 1");
+			batteObj.startBattle();
+			break;
+		case 2:
+			//call the PokeStore class
+
 		}
-		
-		
-		
-		
-		
-		
-	
-		//Doesn't this stuff belong in the Battle class? We should sort this out
-		System.out.println("Let the battle begin!");
-		System.out.println("What will you do?");
-		System.out.println(" 1: Attack  2: Use Potion  3: Use Pokeball");
-		
-		//Provide optios to the User to pick his Pokemon
-		//Reassign the ePokemon Obj with selected data
-		//Options: Battle, Use the store, Exit
-		//Player Name local variable
-		//Add the pokeball logic to add the captured pokeball to the pokemonTeamAfter array
-		//Player / Pokemo class, make the pokemon stronger when it levels up!!!!!
-		
-		//accept's the user's selection and stores it locally
-				Scanner reader = new Scanner (System.in);
-				int selection = reader.nextInt();
-					
-			//Applies the user's selection, and names the user's first pokemon accordingly
-				switch(selection)
-					{
-				case 1://TODO write formula to pull th us
-				//	int damage = (ePokeabilityPower*Strength*multiplier1*multiplier2)/100 //Damage= 
-							batteObj.opponentPokemon.setHP(ePokemon.HP-damage);
-					break;
-				case 2: //display the list of Potion items
-						//accept input from the user
-						//use another switch statement to call the usePotion method of the selected potion
-					String Potion;
-					System.out.println("Choose your potion: /n 1 - Potion1/n 2 - Potion2/n 3 - Potion3");
-					String Potion1, Potion2, Potion3;
-					Scanner reader1 = new Scanner (System.in);
-					String input = reader1. nextLine();
-					
-					if (Potion==Potion1)
-					{Pokemon.getHP
-							settHP(HP=HP*2);
-							}
-					else if(Potion==Potion2)
-					{
-							setHP(HP=HP*4);
-							}
-					else if (Potion==Potion3)
-					{
-							setHP(HP=HP*4);
-							}
-					else
-					{
-						System.out.println("Invalid Potion");
-					}
-						//accept input from the user
-						//use another switch statement to call the usePotion method of the selected potion
-					break;
-				case 3: 
-		//need better error correction 
+		//		//Doesn't this stuff belong in the Battle class? We should sort this out
+		//		System.out.println("Let the battle begin!");
+		//		System.out.println("What will you do?");
+		//		System.out.println(" 1: Attack  2: Use Potion  3: Use Pokeball");
+		//		
+		//		//Provide optios to the User to pick his Pokemon
+		//		
+		////		System.out.println("Pick your Pokemon to start:");
+		////		System.out.println("1: Pikachu");
+		//		//Reassign the ePokemon Obj with selected data
+		//		//Options: Battle, Use the store, Exit
+		//		//Player Name local variable
+		//		//Add the pokeball logic to add the captured pokeball to the pokemonTeamAfter array
+		//		//Player / Pokemo class, make the pokemon stronger when it levels up!!!!!
+		//		
+		//		//accept's the user's selection and stores it locally
+		//				Scanner reader = new Scanner (System.in);
+		//				int selection = reader.nextInt();
+		//					
+		//			//Applies the user's selection, and names the user's first pokemon accordingly
+		//				switch(selection)
+		//					{
+		//				case 1://TODO write formula to pull th us
+		//				//	int damage = (ePokeabilityPower*Strength*multiplier1*multiplier2)/100 //Damage= 
+		//							batteObj.opponentPokemon.setHP(ePokemon.HP-damage);
+		//					break;
+		//				case 2: //display the list of Potion items
+		//						//accept input from the user
+		//						//use another switch statement to call the usePotion method of the selected potion
+		//					String Potion;
+		//					System.out.println("Choose your potion: /n 1 - Potion1/n 2 - Potion2/n 3 - Potion3");
+		//					String Potion1, Potion2, Potion3;
+		//					Scanner reader1 = new Scanner (System.in);
+		//					String input = reader1. nextLine();
+		//					
+		//					if (Potion==Potion1)
+		//					{Pokemon.getHP
+		//							settHP(HP=HP*2);
+		//							}
+		//					else if(Potion==Potion2)
+		//					{
+		//							setHP(HP=HP*4);
+		//							}
+		//					else if (Potion==Potion3)
+		//					{
+		//							setHP(HP=HP*4);
+		//							}
+		//					else
+		//					{
+		//						System.out.println("Invalid Potion");
+		//					}
+		//						//accept input from the user
+		//						//use another switch statement to call the usePotion method of the selected potion
+		//					break;
+		//				case 3: 
+		//		//need better error correction 
+		//		//
+		//		  			//prompt pokeball selection
+		//		  			System.out.println("Which type of pokeball do you want to use: (choose from 1~3)");
+		//		  			System.out.printf("1. Pokeball(%d)%n2. Greatball(%d)%n3. Ultraball(%d)%n", 
+		//		  				quantityBall[1], quantityBall[2], quantityBall[3]);
+		//		  			//accept input from the user
+		//		  			ballSelection = new Scanner(System.in).nextInt();
+		//		  			System.out.println();
+		//		  			//reduce pokeball count by 1
+		//		  			if(quantityBall[ballSelection]>0)
+		//		  			{
+		//		  				quantityBall[ballSelection]--;
+		//	  					catchRate = (maxHP2 - (double) pokemon2.getHP()) / maxHP2 * ballModifier[ballSelection]; 
+		//	  					if(catchRate >= 0.85)
+		//	  						{
+		//	  						System.out.printf("You caught %s!%n", pokemon2.getName());
+		//	  						}
+		//	  					else
+		//	  						System.out.printf("You did not catch %s!%n", pokemon2.getName());
+		//					}
+		//		//need some catch rate formula  			
+		//		  			else
+		//		  				System.out.printf("You are out of %ss. You lost your turn.%n%n", pokeball[ballSelection]);  					
+		//					break;
+		//				default: System.out.println("That is not a valid selection. What would you like to do?");
+		//					}
+		//			}
+		//		
+		//	
+		//		//Logic for level up
+		//	System.out.println("Please enter your name:");
+		//	String playerName=input.nextLine();
+		//	
+		//	Player player1=new Player (playerName);
+		//	Pokemon myPokemon2=new Pokemon("Raichu",500+(Math.random()*500),"StrongerShock",200);
+		//	Pokemon myPokemon1=new EvolvablePokemon("Pikachu",(Math.random()*500),"Shock",20+(int)(Math.random()*80),myPokemon2,5);
 		//
-		  			//prompt pokeball selection
-		  			System.out.println("Which type of pokeball do you want to use: (choose from 1~3)");
-		  			System.out.printf("1. Pokeball(%d)%n2. Greatball(%d)%n3. Ultraball(%d)%n", 
-		  				quantityBall[1], quantityBall[2], quantityBall[3]);
-		  			//accept input from the user
-		  			ballSelection = new Scanner(System.in).nextInt();
-		  			System.out.println();
-		  			//reduce pokeball count by 1
-		  			if(quantityBall[ballSelection]>0)
-		  			{
-		  				quantityBall[ballSelection]--;
-	  					catchRate = (maxHP2 - (double) pokemon2.getHP()) / maxHP2 * ballModifier[ballSelection]; 
-	  					if(catchRate >= 0.85)
-	  						{
-	  						System.out.printf("You caught %s!%n", pokemon2.getName());
-	  						}
-	  					else
-	  						System.out.printf("You did not catch %s!%n", pokemon2.getName());
-					}
-		//need some catch rate formula  			
-		  			else
-		  				System.out.printf("You are out of %ss. You lost your turn.%n%n", pokeball[ballSelection]);  					
-					break;
-				default: System.out.println("That is not a valid selection. What would you like to do?");
-					}
-			}
-		
-	
-		//Logic for level up
-	System.out.println("Please enter your name:");
-	String playerName=input.nextLine();
-	
-	Player player1=new Player (playerName);
-	Pokemon myPokemon2=new Pokemon("Raichu",500+(Math.random()*500),"StrongerShock",200);
-	Pokemon myPokemon1=new EvolvablePokemon("Pikachu",(Math.random()*500),"Shock",20+(int)(Math.random()*80),myPokemon2,5);
+		//	Leveled_Object[] leveledObjects=new Leveled_Object[3];
+		//	leveledObjects[0]=player1;
+		//	leveledObjects[1]=myPokemon1;
+		//	leveledObjects[2]=myPokemon2;
+		//	
+		//	for (LeveledObject x:leveledObjects){
+		//		x.gainExperience(600);
+		//		System.out.println();
+		//	}
+		//}
 
-	Leveled_Object[] leveledObjects=new Leveled_Object[3];
-	leveledObjects[0]=player1;
-	leveledObjects[1]=myPokemon1;
-	leveledObjects[2]=myPokemon2;
-	
-	for (LeveledObject x:leveledObjects){
-		x.gainExperience(600);
-		System.out.println();
 	}
-}
-
-}
 }

@@ -145,3 +145,29 @@ Agreeing to the Xcode/iOS license requires admin privileges, please re-run as ro
 
 2016-11-30 19:08:04,799 [Worker-4] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 >>>>>>> Stashed changes
+2016-12-09 14:24:26,167 [Thread-5] ERROR org.eclipse.jgit.util.FS - 
+
+Agreeing to the Xcode/iOS license requires admin privileges, please re-run as root via sudo.
+
+
+
+2016-12-09 14:24:33,196 [Thread-7] ERROR org.eclipse.jgit.util.FS - 
+
+Agreeing to the Xcode/iOS license requires admin privileges, please re-run as root via sudo.
+
+
+
+2016-12-09 14:25:04,598 [Worker-9] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2016-12-13 15:34:19,684 [Thread-9] ERROR org.eclipse.jgit.util.FS - 
+
+Agreeing to the Xcode/iOS license requires admin privileges, please re-run as root via sudo.
+
+
+
+2016-12-13 15:34:19,872 [Thread-10] ERROR org.eclipse.jgit.util.FS - 
+
+Agreeing to the Xcode/iOS license requires admin privileges, please re-run as root via sudo.
+
+
+
+2016-12-13 15:34:20,663 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
