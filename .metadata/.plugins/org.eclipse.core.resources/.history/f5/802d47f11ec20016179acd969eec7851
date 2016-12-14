@@ -212,13 +212,12 @@ public class Battle {
 				this.opponentPokemon.setHP(this.userPokemon.getHP()-userPokemonDamage);
 				
 				//After each attack, the player gains a random experience
-				checkEvolutionAndPlayerXPStatus(playerObj);
-			
+				playerObj.gainExperience(50 + (int)(Math.random() * 150));			
 				System.out.println("Score:\n"+this.userPokemon.getName()+": "+this.userPokemon.getHP()+"\t\t"+this.opponentPokemon.getName()+": "+this.opponentPokemon.getHP());
 				System.out.println(this.opponentPokemon.getName()+"'s turn to attack you");
 				this.userPokemon.setHP(this.opponentPokemon.getHP()-opponentPokemonDamage);
 				System.out.println("Score:\n"+this.userPokemon.getName()+": "+this.userPokemon.getHP()+"\t\t"+this.opponentPokemon.getName()+": "+this.opponentPokemon.getHP());
-				
+				checkEvolutionAndPlayerXPStatus(playerObj);
 				checkWinner(0);
 				break;
 
@@ -260,8 +259,6 @@ public class Battle {
 	}
 	
 	public void checkEvolutionAndPlayerXPStatus(Player playerObj){
-		playerObj.gainExperience(50 + (int)(Math.random() * 150));
-		//userPokemon.gainExperience(50 + (int)(Math.random() * 150));
 		
 	}
 }

@@ -2,7 +2,7 @@ package poke;
 
 //import poke.Pokemon.EvolvablePokemon;
 
-public class EvolvablePokemon extends Pokemon implements Leveled_Object{
+public class EvolvablePokemon extends Pokemon{
 	private EvolvablePokemon pokemonAfterEvolution;
 	private final int EvolutionLevel;
 
@@ -15,47 +15,27 @@ public class EvolvablePokemon extends Pokemon implements Leveled_Object{
 		this.pokemonAfterEvolution = poke;
 		}
 
-	//Method to evolve the pokemon 
-	//This must be updated to fit the leveling system
-	public void evolve(){
-		
-		name = pokemonAfterEvolution.name;
-		ability1 = pokemonAfterEvolution.ability1;
-		ability2 = pokemonAfterEvolution.ability2;
-		HP = pokemonAfterEvolution.HP;
-		HP= HP*2;
-		level = level++;
-
-	}
-	
-	public void gainExperience(int amount){
-		this.experience+=amount;
-		String message = "";
-		while(enoughXPForNextLevel()) 
-			 message = levelUP();
-		System.out.println(message);
-	}
-	
-	public String levelUP(){
-		
-		HP= HP*2;
-		//strength=strength*2;
-		level=level++;
-		evolve();
-		return "You are now at level "+level;
-	}
-	
-	public boolean enoughXPForNextLevel(){
-		return this.experience>=XPNeededForEvolutionPokemon[level];
-	}
-
-	//	public EvolvablePokemon(String name, double combatPower, String abilityName, int HP, Pokemon nextPokemon, int level)
-	//	{
-	//		super(name,combatPower,abilityName,HP);
-	//		this.pokemonAfterEvolution=nextPokemon;
-	//		this.EvolutionLevel=level;
-	//	}
-
+//	//Method to evolve the pokemon 
+//	//This must be updated to fit the leveling system
+//	public void evolve(){
+//
+//		name = pokemonAfterEvolution.name;
+//		combatPower = pokemonAfterEvolution.combatPower;
+//		ability = pokemonAfterEvolution.ability;
+//		HP = pokemonAfterEvolution.HP;
+//
+//	}
+//
+//	//	private Pokemon pokemonAfterEvolution;
+//
+//
+//	//	public EvolvablePokemon(String name, double combatPower, String abilityName, int HP, Pokemon nextPokemon, int level)
+//	//	{
+//	//		super(name,combatPower,abilityName,HP);
+//	//		this.pokemonAfterEvolution=nextPokemon;
+//	//		this.EvolutionLevel=level;
+//	//	}
+//
 //	public Pokemon getPokemonAfterEvolution(){
 //		return pokemonAfterEvolution;
 //	}

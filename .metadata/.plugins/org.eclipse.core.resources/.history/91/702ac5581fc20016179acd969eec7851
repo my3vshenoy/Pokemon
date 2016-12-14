@@ -1,7 +1,7 @@
 
 package poke;
 
-public class Pokemon implements Leveled_Object{
+public class Pokemon {
 
 	/**
 	 * @param args
@@ -97,41 +97,12 @@ public class Pokemon implements Leveled_Object{
 
 	//Increases the level of the pokemon by 1
 	//Also increases the HP and strength stats by 10% of previous value
-//public String levelUP(){
-//		HP= HP*2;
-//		strength=strength*2;
-//		level=level++;
-//	return "You are now at level "+level;
-//}
-//
-//public void gainExperience(int amount) {
-//	// Will be overridden in the subclass
-//}
-//
-//public boolean enoughXPForNextLevel(){
-//	return false;
-//}
-	
-	public void gainExperience(int amount){
-		this.experience+=amount;
-		String message = "";
-		while(enoughXPForNextLevel()) 
-			 message = levelUP();
-		System.out.println(message);
-	}
-	
-	public String levelUP(){
-		
+public String levelUP(){
 		HP= HP*2;
 		strength=strength*2;
 		level=level++;
-		return "You are now at level "+level;
-		
-	}
-	
-	public boolean enoughXPForNextLevel(){
-		return this.experience>=XPNeededForEvolutionPokemon[level];
-	}
+	return "You are now at level "+level;
+}
 	
 }
 

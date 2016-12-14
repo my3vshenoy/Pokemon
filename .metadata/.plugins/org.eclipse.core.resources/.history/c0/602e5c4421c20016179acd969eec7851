@@ -28,26 +28,19 @@ public class EvolvablePokemon extends Pokemon implements Leveled_Object{
 
 	}
 	
-	public void gainExperience(int amount){
-		this.experience+=amount;
-		String message = "";
-		while(enoughXPForNextLevel()) 
-			 message = levelUP();
-		System.out.println(message);
-	}
-	
-	public String levelUP(){
+	public void gainExperience(int amount) {
 		
-		HP= HP*2;
-		//strength=strength*2;
-		level=level++;
-		evolve();
-		return "You are now at level "+level;
-	}
-	
-	public boolean enoughXPForNextLevel(){
+		this.experience+=amount;
+		//String message = "";
+		while(enoughXPForNextLevel()) {
+			 evolve();
+			 System.out.println("Congratulations! You just evolved to Level "+getLevel()+"!");
+			 System.out.println("You are now:"+getName());
+		}
+}
+	public boolean enoughXPForNextLevel() {
 		return this.experience>=XPNeededForEvolutionPokemon[level];
-	}
+}
 
 	//	public EvolvablePokemon(String name, double combatPower, String abilityName, int HP, Pokemon nextPokemon, int level)
 	//	{

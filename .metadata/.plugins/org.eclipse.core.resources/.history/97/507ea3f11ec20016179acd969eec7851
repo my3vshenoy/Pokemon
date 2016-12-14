@@ -12,15 +12,15 @@ public class Pokemon implements Leveled_Object{
 	//		System.out.println("Let the coding begin");
 	//		public class Pokemon {
 	//declaring the instance variables (or attributes) of the pokemon
-	protected String name;
+	private String name;
 	private String type1;
 	private String type2;
-	protected Ability ability1;
-	protected Ability ability2;
+	private Ability ability1;
+	private Ability ability2;
 	private int strength;
-	protected int HP;
-	protected int experience;
-	protected int level;
+	private int HP;
+	private double experience;
+	private int level;
 	private Potions potions;
 
 	//constructor initializes the variables
@@ -61,7 +61,7 @@ public class Pokemon implements Leveled_Object{
 	public void setStrength(int strength)
 	{this.strength = strength;}
 	
-	public void setexperience(int experience)
+	public void setexperience(double experience)
 	{this.experience = experience;}
 	
 	public void setLevel(int level)
@@ -89,7 +89,7 @@ public class Pokemon implements Leveled_Object{
 	public int getStrength()
 	{return strength;}
 	
-	public int getexperience()
+	public double getexperience()
 	{return experience;}
 
 	public int getLevel()
@@ -97,41 +97,16 @@ public class Pokemon implements Leveled_Object{
 
 	//Increases the level of the pokemon by 1
 	//Also increases the HP and strength stats by 10% of previous value
-//public String levelUP(){
-//		HP= HP*2;
-//		strength=strength*2;
+public String levelUP(){
+//		HP= (int)HP*1.1;
+//		strength=(int)strength*1.1;
 //		level=level++;
-//	return "You are now at level "+level;
-//}
-//
-//public void gainExperience(int amount) {
-//	// Will be overridden in the subclass
-//}
-//
-//public boolean enoughXPForNextLevel(){
-//	return false;
-//}
-	
-	public void gainExperience(int amount){
-		this.experience+=amount;
-		String message = "";
-		while(enoughXPForNextLevel()) 
-			 message = levelUP();
-		System.out.println(message);
+	return "";
+}
+	public void gainExperience(int amount) {
 	}
-	
-	public String levelUP(){
-		
-		HP= HP*2;
-		strength=strength*2;
-		level=level++;
-		return "You are now at level "+level;
-		
+	public boolean enoughXPForNextLevel() {
+		return false;
 	}
-	
-	public boolean enoughXPForNextLevel(){
-		return this.experience>=XPNeededForEvolutionPokemon[level];
-	}
-	
 }
 

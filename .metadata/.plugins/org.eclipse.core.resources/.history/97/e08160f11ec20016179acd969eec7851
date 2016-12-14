@@ -56,7 +56,7 @@ public class Player implements Leveled_Object{
 	}
 	
 	public boolean enoughXPForNextLevel(){
-		return this.experience>=XPNeededForNextLevelPlayer[level];
+		return this.experience>=XPNeededForNextLevel[level];
 	}
 	
 	private String getLevelUPreward(int level, String message){
