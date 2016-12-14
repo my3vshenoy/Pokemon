@@ -63,7 +63,7 @@ public class Potions
 		System.out.println("You now have "+quantityPotionArray[itemSelected]+ " " +potionArray[itemSelected] +"s.");
 	}
 	
-	public Pokemon usePotions(Pokemon userPokemon)
+	public void usePotions()
 	{
 		System.out.println("Which type of potion do you want to use: (choose from 1~3)");
 		System.out.println("1. Potion ("+quantityPotionArray[1]+")");
@@ -79,7 +79,6 @@ public class Potions
 			quantityPotion = --quantityPotionArray[potionSelection];
 			potion = potionArray[potionSelection];
 			HPRestored = HPRestoredArray[potionSelection];
-			userPokemon.setHP(userPokemon.getHP()+HPRestored);
 			System.out.println("Potion Status: \n"+ potion+ " left: "+quantityPotion+"\nHP Restored: "+HPRestored);
 		}
 		else
@@ -89,7 +88,6 @@ public class Potions
 			HPRestored = 0;
 			System.out.println("You don't have enough "+potion);
 		}
-		return userPokemon;
 	}				
 }
 

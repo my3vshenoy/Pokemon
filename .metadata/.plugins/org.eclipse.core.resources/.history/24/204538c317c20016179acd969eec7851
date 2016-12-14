@@ -224,8 +224,7 @@ public class Battle {
 			case 2: 
 				System.out.println("Switch case 2 for Potions");
 				Potions potionObj = new Potions();
-				this.userPokemon = potionObj.usePotions(this.userPokemon);
-				checkWinner(0);
+				potionObj.usePotions();
 				flag =1;
 				break;
 
