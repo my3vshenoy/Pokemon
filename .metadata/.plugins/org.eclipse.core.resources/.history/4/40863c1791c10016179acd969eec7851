@@ -172,44 +172,31 @@ public class Battle {
 	//					Hitmonchan,Hitmonlee,Drowzee,Snorlax,Mew,Jigglypuff,Zapdos,Articuno,Moltres,Hippowodon,Absol,Magnemite,Goodra,Diglett,
 	//					Pinsir,Shuckle,Tauros,Magmar,Starmie,Aerodactyl,Muk,Aggron,Tropius,Mankey};
 	//
-	
-//	public int getAbilityTypeIndex(String abilityTypeParameter){
-//		
-//		if (abilityTypeParameter == "Bug"){
-//			return 0;
-//		}
-//		
-//		}
-//	}
-	
 	public void startBattle(){
 		
 				
 	System.out.println("we are now in Battle class");
-	System.out.println("Let the battle begin!");
-	System.out.println("What will you do?");
-	System.out.println(" 1: Attack \n 2: Use Potion\n 3: Use Pokeball");
+	//.println("Let the battle begin!");
+	//System.out.println("What will you do?");
+	//System.out.println(" 1: Attack %n 2: Use Potion%n 3: Use Pokeball");
 
-		//accept's the user's selection and stores it locally
-			Scanner reader = new Scanner (System.in);
-			int selection = reader.nextInt();
-				
-		//Applies the user's selection, and names the user's first pokemon accordingly
-			switch(selection)
-				{
-			case 1:
-				System.out.println("Switch case 1 for Attack");
-				int damage = 40;
-				//(userPokemon.getAbility1().getAbilityPower()*userPokemon.getStrength()*multiplier[userPokemon.getAbility1().getAbilityType()][]*multiplier2)/100
-				opponentPokemon.setHP(opponentPokemon.getHP()-damage);
-				break;
-				
-			case 2: 
-				Potions potionObj = new Potions();
-				potionObj.usePotions();
-				break;
-				
-			case 3: 
+	//	//accept's the user's selection and stores it locally
+	//		Scanner reader = new Scanner (System.in);
+	//		int selection = reader.nextInt();
+	//			
+	//	//Applies the user's selection, and names the user's first pokemon accordingly
+	//		switch(selection)
+	//			{
+	//		case 1://TODO write formula to pull th us
+	//			int damage = //Damage= (abilityPower*Strength*multiplier1*multiplier2)/100
+	//			opponentPokemon.setHP(HP=HP-damage)
+	//			break;
+	//		case 2: //display the list of Potion items
+	//				//accept input from the user
+	//				//use another switch statement to call the usePotion method of the selected potion
+	//			break;
+	//		case 3: 
+	////need better error correction 
 	//  			//prompt pokeball selection
 	//  			System.out.println("Which type of pokeball do you want to use: (choose from 1~3)");
 	//  			System.out.printf("1. Pokeball(%d)%n2. Greatball(%d)%n3. Ultraball(%d)%n", 
@@ -233,7 +220,10 @@ public class Battle {
 	//			break;
 	//		default: System.out.println("That is not a valid selection. What would you like to do?");
 	//			}
-		}
+	//	}
+
+
+	
 	}
 			
 	////MAIN METHOD		

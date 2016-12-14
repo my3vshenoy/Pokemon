@@ -188,7 +188,7 @@ public class Battle {
 	System.out.println("we are now in Battle class");
 	System.out.println("Let the battle begin!");
 	System.out.println("What will you do?");
-	System.out.println(" 1: Attack \n 2: Use Potion\n 3: Use Pokeball");
+	System.out.println(" 1: Attack %n 2: Use Potion%n 3: Use Pokeball");
 
 		//accept's the user's selection and stores it locally
 			Scanner reader = new Scanner (System.in);
@@ -204,11 +204,15 @@ public class Battle {
 				opponentPokemon.setHP(opponentPokemon.getHP()-damage);
 				break;
 				
-			case 2: 
+			case 2: //display the list of Potion items
+				System.out.println("Switch case 2 for Potion");
 				Potions potionObj = new Potions();
-				potionObj.usePotions();
+				potionObj.displayPotions();
+					//accept input from the user
+				selection = reader.nextInt();
+				System.out.println("Selected Potion:"+potionObj.toString());
+					//use another switch statement to call the usePotion method of the selected potion
 				break;
-				
 			case 3: 
 	//  			//prompt pokeball selection
 	//  			System.out.println("Which type of pokeball do you want to use: (choose from 1~3)");

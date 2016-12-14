@@ -188,7 +188,7 @@ public class Battle {
 	System.out.println("we are now in Battle class");
 	System.out.println("Let the battle begin!");
 	System.out.println("What will you do?");
-	System.out.println(" 1: Attack \n 2: Use Potion\n 3: Use Pokeball");
+	System.out.println(" 1: Attack %n 2: Use Potion%n 3: Use Pokeball");
 
 		//accept's the user's selection and stores it locally
 			Scanner reader = new Scanner (System.in);

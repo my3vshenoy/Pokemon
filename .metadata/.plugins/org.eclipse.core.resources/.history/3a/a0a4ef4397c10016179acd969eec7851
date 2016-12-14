@@ -60,13 +60,13 @@ public class Potions
 	public void usePotions()
 	{
 		System.out.println("Which type of potion do you want to use: (choose from 1~3)");
-		System.out.println("1. Potion ("+quantityPotionArray[1]+")");
-		System.out.println("2. Super Potion ("+quantityPotionArray[2]+")");
-		System.out.println("3. Hyper Potion ("+quantityPotionArray[3]+")");
+		System.out.println("1. Potion"+quantityPotionArray[1]);
+		System.out.println("2. Super Potion"+quantityPotionArray[2]);
+		System.out.println("3. Hyper Potion"+quantityPotionArray[3]);
 		 
 		//accept input from the user
 		potionSelection = new Scanner(System.in).nextInt();
-		System.out.println(potionSelection);
+		System.out.println();
 		//reduce potion count by 1
 		if(quantityPotionArray[potionSelection]>0)
 		{

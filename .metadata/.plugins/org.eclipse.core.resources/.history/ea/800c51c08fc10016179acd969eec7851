@@ -40,7 +40,5 @@ public class Ability {
 	
 	public int getAbilityPower()
 	 {return abilityPower;}
-	
-	public String getAbilityType()
-	 {return abilityType;}
+
 }
