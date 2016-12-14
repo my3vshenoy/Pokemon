@@ -182,9 +182,12 @@ public class Battle {
 //		}
 //	}
 	
-	public void startBattle(){
+	public void startBattle(Pokemon userPokemon, Pokemon opponentPokemon){
 		
-				
+	this.userPokemon = userPokemon;
+	this.opponentPokemon = opponentPokemon;
+	System.out.println("You are:"+this.userPokemon.getName());
+	System.out.println("You are fighting against:"+this.opponentPokemon.getName());
 	System.out.println("we are now in Battle class");
 	System.out.println("Let the battle begin!");
 	System.out.println("What will you do?");
@@ -201,7 +204,7 @@ public class Battle {
 				System.out.println("Switch case 1 for Attack");
 				int damage = 40;
 				//(userPokemon.getAbility1().getAbilityPower()*userPokemon.getStrength()*multiplier[userPokemon.getAbility1().getAbilityType()][]*multiplier2)/100
-				opponentPokemon.setHP(opponentPokemon.getHP()-damage);
+				this.opponentPokemon.setHP(this.opponentPokemon.getHP()-damage);
 				break;
 				
 			case 2: 
@@ -210,29 +213,30 @@ public class Battle {
 				break;
 				
 			case 3: 
-	//  			//prompt pokeball selection
-	//  			System.out.println("Which type of pokeball do you want to use: (choose from 1~3)");
-	//  			System.out.printf("1. Pokeball(%d)%n2. Greatball(%d)%n3. Ultraball(%d)%n", 
-	//  				quantityBall[1], quantityBall[2], quantityBall[3]);
-	//  			//accept input from the user
-	//  			ballSelection = new Scanner(System.in).nextInt();
-	//  			System.out.println();
-	//  			//reduce pokeball count by 1
-	//  			if(quantityBall[ballSelection]>0)
-	//				{
-	//					quantityBall[ballSelection]--;
-	//					catchRate = (maxHP2 - (double) pokemon2.getHP()) / maxHP2 * ballModifier[ballSelection]; 
-	//					if(catchRate >= 0.85)
-	//						System.out.printf("You caught %s!%n", pokemon2.getName());
-	//					else
-	//						System.out.printf("You did not catch %s!%n", pokemon2.getName());
-	//				}
-	//			
-	//  			else
-	//  				System.out.printf("You are out of %ss. You lost your turn.%n%n", pokeball[ballSelection]);  					
-	//			break;
-	//		default: System.out.println("That is not a valid selection. What would you like to do?");
-	//			}
+				//prompt pokeball selection
+	  			System.out.println("Which type of pokeball do you want to use: (choose from 1~3)");
+	  			System.out.println("1. Pokeball("+quantityBall[1]+")\n2. Greatball("+quantityBall[2]+")\n3. Ultraball("+quantityBall[3]+")"); 
+	  				
+	  			//accept input from the user
+	  			ballSelection = new Scanner(System.in).nextInt();
+	  			System.out.println();
+	  			
+	  			//reduce pokeball count by 1
+	  			if(quantityBall[ballSelection]>0)
+					{
+						quantityBall[ballSelection]--;
+						catchRate = (maxHP2 - (double) this.opponentPokemon.getHP()) / maxHP2 * ballModifier[ballSelection]; 
+						if(catchRate >= 0.85)
+							System.out.println("You caught "+this.opponentPokemon.getName()+"!\n");
+						else
+							System.out.println("You did not catch "+this.opponentPokemon.getName()+"!\n");
+					}
+				
+	  			else
+	  				System.out.println("You are out of "+pokeball[ballSelection]+". You lost your turn.\n\n");  					
+				break;
+			default: System.out.println("That is not a valid selection. What would you like to do?");
+				}
 		}
 	}
 			
@@ -312,4 +316,4 @@ public class Battle {
 	////			}
 	//	}
 	
-}
+

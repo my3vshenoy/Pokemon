@@ -18,7 +18,7 @@ public class PokemonGo {
 		Pokemon[] pokemonTeamBefore = new Pokemon[100];
 		Pokemon[] pokemonTeamAfter = new Pokemon[100];
 		Potions potions = new Potions(null,0,0);
-		Pokeballs pokeballs = new Pokeballs(null,0,0);
+		//Pokeballs pokeballs = new Pokeballs(null,0,0);
 		Battle batteObj = new Battle();
 		EvolvablePokemon ePokemon = new EvolvablePokemon("Ivysaur","Grass","Poison",null,null,156,350,0,3,100,null);
 
@@ -147,7 +147,7 @@ public class PokemonGo {
 		Pokemon[] pokemonList={Bulbasaur,Ivysaur,Squirtle,Wartortle,Charmander,Charmeleon,Scyther,Scizor,Onix,Electabuzz,Haunter,Lapras,
 				Hitmonchan,Hitmonlee,Drowzee,Snorlax,Mew,Jigglypuff,Zapdos,Articuno,Moltres,Hippowodon,Absol,Magnemite,Goodra,Diglett,
 				Pinsir,Shuckle,Tauros,Magmar,Starmie,Aerodactyl,Muk,Aggron,Tropius,Mankey};
-
+		
 		// This is the start of the user interface
 		//It will prompt the user to select a starting pokemon, 
 		//then add that pokemon to their team
@@ -198,7 +198,8 @@ public class PokemonGo {
 		case 1:
 			//call the Battle class
 			System.out.println("Inside Switch case 1");
-			batteObj.startBattle();
+			batteObj.startBattle(pokemonTeamBefore[0], pokemonList[0 + (int)(Math.random() * 35)]);
+			
 			break;
 		case 2:
 			//call the PokeStore class
