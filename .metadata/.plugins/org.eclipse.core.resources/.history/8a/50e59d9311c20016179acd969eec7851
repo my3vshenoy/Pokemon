@@ -215,10 +215,10 @@ public class Battle {
 				this.userPokemon.setHP(this.opponentPokemon.getHP()-opponentPokemonDamage);
 				//this.userPokemon.setHP(this.opponentPokemon.getHP()-opponentPokemonDamage);
 				
-				System.out.println("Score:\n"+this.userPokemon.getName()+": "+this.userPokemon.getHP()+"\t\t"+this.opponentPokemon.getName()+": "+this.opponentPokemon.getHP());
+				System.out.println("Score:\n"+this.userPokemon.getName()+": "+this.userPokemon.getStrength()+"\t\t"+this.opponentPokemon.getName()+": "+this.opponentPokemon.getStrength());
 				if(this.userPokemon.getHP()<=0){
 					flag = 0;
-					System.out.println("Score:\n"+this.userPokemon.getName()+": "+this.userPokemon.getHP()+"\t\t"+this.opponentPokemon.getName()+": "+this.opponentPokemon.getHP());
+					System.out.println("Score:\n"+this.userPokemon.getName()+": "+this.userPokemon.getStrength()+"\t\t"+this.opponentPokemon.getName()+": "+this.opponentPokemon.getStrength());
 					System.out.println("Game Over...You are out of Power");
 					System.exit(0);
 				}

@@ -18,9 +18,11 @@ public class PokemonGo {
 
 		Pokemon[] pokemonTeamBefore = new Pokemon[100];
 		Pokemon[] pokemonTeamAfter = new Pokemon[100];
-
+<<<<<<< HEAD
 		Pokemon opponentPokemon;
 		Potions potions = new Potions(null,0,0);
+=======
+>>>>>>> origin/master
 		Player playerObj =  new Player("Player 1");
 		Battle batteObj = new Battle();
 		PokeStore shopObj = new PokeStore();

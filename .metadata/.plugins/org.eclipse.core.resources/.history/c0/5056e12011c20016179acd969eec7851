@@ -38,6 +38,10 @@ public class Pokemon implements Leveled_Object{
 		this.level= level;
 	}
 	
+	//Pre requisite methods
+	public void setPotion(){
+		this.potions = new Potions()
+	}
 
 	//Set method to set the value each of the three instance variables 
 	public void setName(String name)

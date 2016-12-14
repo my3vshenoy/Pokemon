@@ -21,7 +21,6 @@ public class Pokemon implements Leveled_Object{
 	private int HP;
 	private double experience;
 	private int level;
-	private Potions potions;
 
 	//constructor initializes the variables
 	public Pokemon (String name, String type1, String type2, Ability ability1, Ability ability2, 
@@ -37,7 +36,6 @@ public class Pokemon implements Leveled_Object{
 		this.experience= experience;
 		this.level= level;
 	}
-	
 
 	//Set method to set the value each of the three instance variables 
 	public void setName(String name)
