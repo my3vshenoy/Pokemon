@@ -203,7 +203,7 @@ public class PokemonGo {
 		//Ask the user if they would like to fight or go to the store
 		//What a bleak existence in which combat and consumerism are the only options
 		//Use a switch statement to call up whichever class the user chooses
-		System.out.println("Now that you have a Pokemon partner, you're ready for anything.");
+		System.out.println("\n\nNow that you have a Pokemon partner, you're ready for anything.");
 		while (flag != 0){
 			System.out.println("What would you like to do");
 			System.out.println("1: Fight Wild Pokemon  2:Visit the PokeStore 3: Exit the game");
