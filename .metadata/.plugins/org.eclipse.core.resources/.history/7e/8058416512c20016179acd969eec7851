@@ -209,12 +209,24 @@ public class Battle {
 				System.out.println("You attack first on "+this.opponentPokemon.getName());
 				int userPokemonDamage = (int)(this.userPokemon.getAbility1().getAbilityPower()*this.userPokemon.getStrength()*multiplier[index1][index2]*multiplier[index1][index3])/100;
 				int opponentPokemonDamage = (int)(this.opponentPokemon.getAbility1().getAbilityPower()*this.opponentPokemon.getStrength()*multiplier[index4][index5]*multiplier[index4][index6])/100;
+				
 				this.opponentPokemon.setHP(this.userPokemon.getHP()-userPokemonDamage);
-				System.out.println("Score:\n"+this.userPokemon.getName()+": "+this.userPokemon.getHP()+"\t\t"+this.opponentPokemon.getName()+": "+this.opponentPokemon.getHP());
 				System.out.println(this.opponentPokemon.getName()+"'s turn to attack you");
 				this.userPokemon.setHP(this.opponentPokemon.getHP()-opponentPokemonDamage);
+				//this.userPokemon.setHP(this.opponentPokemon.getHP()-opponentPokemonDamage);
+				
 				System.out.println("Score:\n"+this.userPokemon.getName()+": "+this.userPokemon.getHP()+"\t\t"+this.opponentPokemon.getName()+": "+this.opponentPokemon.getHP());
-				checkWinner(0);
+				if(this.userPokemon.getHP()<=0){
+					flag = 0;
+					System.out.println("Score:\n"+this.userPokemon.getName()+": "+this.userPokemon.getHP()+"\t\t"+this.opponentPokemon.getName()+": "+this.opponentPokemon.getHP());
+					System.out.println("Game Over...You are out of Power");
+					System.exit(0);
+				}
+				else if(this.opponentPokemon.getHP()<=0){
+					flag = 0;
+					System.out.println("Score:\n"+this.userPokemon.getName()+": "+this.userPokemon.getStrength()+"\t\t"+this.opponentPokemon.getName()+": "+this.opponentPokemon.getStrength());
+					System.out.println("You won against "+this.opponentPokemon.getName());
+				}
 				break;
 
 			case 2: 
@@ -234,19 +246,6 @@ public class Battle {
 				System.out.println("Not a valid option");
 				flag = 1;
 			}
-		}
-	}
-	public void checkWinner(int flag){
-		if(this.userPokemon.getHP()<=0){
-			flag = 0;
-			//System.out.println("Score:\n"+this.userPokemon.getName()+": "+this.userPokemon.getHP()+"\t\t"+this.opponentPokemon.getName()+": "+this.opponentPokemon.getHP());
-			System.out.println("Game Over...You are out of Power");
-			System.exit(0);
-		}
-		else if(this.opponentPokemon.getHP()<=0){
-			flag = 0;
-			//System.out.println("Score:\n"+this.userPokemon.getName()+": "+this.userPokemon.getStrength()+"\t\t"+this.opponentPokemon.getName()+": "+this.opponentPokemon.getStrength());
-			System.out.println("You won against "+this.opponentPokemon.getName());
 		}
 	}
 }
