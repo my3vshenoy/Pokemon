@@ -16,8 +16,6 @@ public class Battle {
 	double[] ballModifier = {0, 1, 1.1, 1.2};
 	int ballSelection = 0;
 	double catchRate = 0.0;
-	int maxHP1 = 0;
-	int maxHP2 = 0;	
 
 	//initialize and array of String variables to store the names of the types
 	//This will be necessary to look up those types in the "multiplier" matrix that follows
@@ -225,8 +223,8 @@ public class Battle {
 	  			if(quantityBall[ballSelection]>0)
 					{
 						quantityBall[ballSelection]--;
-						catchRate = (maxHP2 - (double) this.opponentPokemon.getHP()) / maxHP2 * ballModifier[ballSelection]; 
-						if(catchRate >= 0.85)
+						catchRate = (double) opponentPokemon.getHP() / 100 - ballModifier[ballSelection]; 
+						if(catchRate <= 0.33)
 							System.out.println("You caught "+this.opponentPokemon.getName()+"!\n");
 						else
 							System.out.println("You did not catch "+this.opponentPokemon.getName()+"!\n");

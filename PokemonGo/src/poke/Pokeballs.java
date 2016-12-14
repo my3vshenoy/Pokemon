@@ -39,7 +39,12 @@
 //	public double getBallModifier()
 //		{return ballModifier;}
 //
-//	
+//	public void buyPokeball(int itemSelected)
+//	{
+//		quantityBall = ++quantityBallArray[itemSelected];
+//		System.out.println("You now have "+quantityBallArray[itemSelected]+ " " +pokeballArray[itemSelected] +"s.");
+//	}
+
 //	public void usePokeballs()
 //	{
 //		System.out.println("Which type of pokeball do you want to use: (choose from 1~3)");

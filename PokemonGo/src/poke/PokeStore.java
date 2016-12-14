@@ -1,63 +1,78 @@
-/*package poke;
+package poke;
 import java.util.Scanner;
 
-import static java.lang.System.out;
-
 public class PokeStore {
+	
 	public String[] itemsForSale = {"Pokeball","Greatball","Ultraball","Potion","Super Potion","Hyper Potion"};
-	public int[] priceList = { 50, 75, 100, 75, 100, 140 };
+	public int[] priceList = {50, 75, 100, 75, 100, 140};
 	public int listLength=itemsForSale.length;
+	public int itemSelected = 0;
+	Player player = new Player(null);
+	Potions potionObj = new Potions();
+//	Pokeballs pokeballObj = new Pokeballs(null,0,0);
 	
-	System.out.println("Hello, and welcome to the PokeStore.\n");
-	System.out.printf("Your current cash balance is %d. %n",player.getMoney());
-	System.out.println("What would you like to purchase today?");
-	
-	private int counter=0
-	while (listLength >= counter){
-		System.out.printf("%s   $%d %n", itemsForSale[counter],priceList[counter]);
-		counter++;
+	public PokeStore(){
 	}
-	Scanner itemSelected = new Scanner (System.in);
-	String activitySelection = reader2.next();
 	
-	//For each of the six items in the itemsForSale list, create a case
-	//which adds that item to the Player's list
-	switch(itemSelected){
-		case 1:
-			{ if (itemSelected = itemsForSale[0]);
-			money = money - priceList[0];			
-			pokeball++;
-			break; }
-		case 2:
-				if (itemSelected = itemsForSale[1]);
-				{money = money - priceList[1];
-				pokeball++;
-				break; 	
-		case 3: 
-				if (itemSelected = itemsForSale[3]);
-				{money = money - priceList[0];
-				pokeball++;
+	public void visitStore(){
+		
+		System.out.println("Hello, and welcome to the PokeStore.");
+		
+		int flag = 1;
+		while (flag != 0){
+			System.out.printf("Your current cash balance is %d. %n", player.getMoney());
+			System.out.println("What would you like to purchase today?");
+			
+			int counter = 0;
+			while (listLength > counter)
+			{
+				System.out.printf("%d. %s   $%d %n", counter+1, itemsForSale[counter],priceList[counter]);
+				counter++;
+			}
+			
+			//notify about option to exit store
+			System.out.println("If you would like to exit the store type 7.");
+			
+			//user input
+			itemSelected = new Scanner(System.in).nextInt();	
+			
+			//check if user wants to exit store
+			if(itemSelected == 7)
+			{
+				flag = 0;
 				break;
-				
-		case 4: 
-			    if (itemSelected = itemsForSale[4]);
-				{money = money - priceList[4];
-				potions++;
-				break;	
-				
-		case 5:
-			    if (itemSelected = itemsForSale[5]);
-			   money = money - priceList[5];
-			   potions++;
-			   break;	
-		case 6:
-		    if (itemSelected = itemsForSale[6]);
-		   money = money - priceList[6];
-		   potions++;
-		   break;
-		   
-		default: System.out.println("That is not a valid selection from the PokeStore.");
+			}
+			
+			//Check if there is enough money to buy
+			if(player.getMoney()-priceList[itemSelected-1] > 0)	
+				player.useMoney(priceList[itemSelected-1]);	
+			else 
+			{
+				System.out.println("You do not have enough money to buy that item.");
+				flag = 1;
+				continue;
+			}	
 
-}}
+			//For each of the six items in the itemsForSale list, create a case
+			//which adds that item to the Player's list
+			switch (itemSelected)
+			{
+				case 1:
+				case 2:
+				case 3:
+//					pokeballObj.buyPokeball(itemSelected);
+					flag = 0;
+					break;
+				case 4: 
+				case 5:
+				case 6:
+					potionObj.buyPotion(itemSelected-3);
+					flag = 0;
+					break;
+				default: 
+					System.out.println("That is not a valid selection from the PokeStore.");
+					flag = 1;
+			}
+		}
+	}
 }
-*/

@@ -20,6 +20,7 @@ public class PokemonGo {
 		Potions potions = new Potions(null,0,0);
 		//Pokeballs pokeballs = new Pokeballs(null,0,0);
 		Battle batteObj = new Battle();
+		PokeStore shopObj = new PokeStore();
 		EvolvablePokemon ePokemon = new EvolvablePokemon("Ivysaur","Grass","Poison",null,null,156,350,0,3,100,null);
 
 		//Flag for user to exit the game. Can have 0 or 1
@@ -197,9 +198,9 @@ public class PokemonGo {
 		//What a bleak existence in which combat and consumerism are the only options
 		//Use a switch statement to call up whichever class the user chooses
 		System.out.println("Now that you have a Pokemon partner, you're ready for anything.");
-		System.out.println("What would you like to do");
-		System.out.println("1: Fight Wild Pokemon  2:Visit the PokeStore 3: Exit the game");
 		while (flag != 0){
+			System.out.println("What would you like to do");
+			System.out.println("1: Fight Wild Pokemon  2:Visit the PokeStore 3: Exit the game");
 			selection = reader1.nextInt();
 
 			switch(selection){
@@ -210,7 +211,9 @@ public class PokemonGo {
 				break;
 			case 2:
 				//call the PokeStore class
+				shopObj.visitStore();
 				flag = 1;
+				break;
 
 			case 3: //Allow User to exit the game
 				flag = 0;
@@ -220,7 +223,6 @@ public class PokemonGo {
 
 			default:
 				System.out.println("That is not a valid selection. Please try again.");
-				System.out.println("1: Fight Wild Pokemon  2:Visit the PokeStore 3: Exit the game");
 				flag = 1;
 
 			}

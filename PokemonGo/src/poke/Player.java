@@ -37,6 +37,14 @@ public class Player implements Leveled_Object{
 			levelUP();
 	}
 	
+	public int getMoney(){
+		return this.money;
+	}
+	
+	public void useMoney(int price){
+		this.money-=price;
+	}
+	
 	public void levelUP(){
 		
 		this.level++;

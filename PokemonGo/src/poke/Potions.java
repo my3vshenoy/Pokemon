@@ -57,6 +57,12 @@ public class Potions
 	public int getHPRestored()
 		{return HPRestored;}
 	
+	public void buyPotion(int itemSelected)
+	{
+		quantityPotion = ++quantityPotionArray[itemSelected];
+		System.out.println("You now have "+quantityPotionArray[itemSelected]+ " " +potionArray[itemSelected] +"s.");
+	}
+	
 	public void usePotions()
 	{
 		System.out.println("Which type of potion do you want to use: (choose from 1~3)");
