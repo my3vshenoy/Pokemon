@@ -9,13 +9,7 @@ public class Battle {
 	public String selectedAbility;
 	public Pokemon userPokemon;
 	public Pokemon opponentPokemon;
-
-	//initialize pokeballs
-	String[] pokeball = {"", "Pokeball", "Greatball", "Ultraball"};
-	int[] quantityBall = {0, 3, 3, 3};
-	double[] ballModifier = {0, 1, 1.1, 1.2};
-	int ballSelection = 0;
-	double catchRate = 0.0;
+	public Pokeballs pokeballObj = new Pokeballs(null, 0, 0);
 
 	//initialize and array of String variables to store the names of the types
 	//This will be necessary to look up those types in the "multiplier" matrix that follows
@@ -206,37 +200,21 @@ public class Battle {
 				break;
 				
 			case 2: 
+				System.out.println("Switch case 2 for Potions");
 				Potions potionObj = new Potions();
 				potionObj.usePotions();
 				break;
 				
 			case 3: 
+				System.out.println("Switch case 3 for Use Pokeballs");
 				//prompt pokeball selection
-	  			System.out.println("Which type of pokeball do you want to use: (choose from 1~3)");
-	  			System.out.println("1. Pokeball("+quantityBall[1]+")\n2. Greatball("+quantityBall[2]+")\n3. Ultraball("+quantityBall[3]+")"); 
-	  				
-	  			//accept input from the user
-	  			ballSelection = new Scanner(System.in).nextInt();
-	  			System.out.println();
-	  			
-	  			//reduce pokeball count by 1
-	  			if(quantityBall[ballSelection]>0)
-					{
-						quantityBall[ballSelection]--;
-						catchRate = (double) opponentPokemon.getHP() / 100 - ballModifier[ballSelection]; 
-						if(catchRate <= 0.33)
-							System.out.println("You caught "+this.opponentPokemon.getName()+"!\n");
-						else
-							System.out.println("You did not catch "+this.opponentPokemon.getName()+"!\n");
-					}
-				
-	  			else
-	  				System.out.println("You are out of "+pokeball[ballSelection]+". You lost your turn.\n\n");  					
+				pokeballObj.usePokeballs(opponentPokemon);
 				break;
-			default: System.out.println("That is not a valid selection. What would you like to do?");
-				}
+			default:
+				System.out.println("Not a valid option");
 		}
 	}
+}
 			
 	////MAIN METHOD		
 	//	

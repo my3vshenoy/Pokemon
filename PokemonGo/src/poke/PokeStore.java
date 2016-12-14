@@ -20,13 +20,13 @@ public class PokeStore {
 		
 		int flag = 1;
 		while (flag != 0){
-			System.out.printf("Your current cash balance is %d. %n", player.getMoney());
+			System.out.println("Your current cash balance is "+ player.getMoney());
 			System.out.println("What would you like to purchase today?");
 			
 			int counter = 0;
 			while (listLength > counter)
 			{
-				System.out.printf("%d. %s   $%d %n", counter+1, itemsForSale[counter],priceList[counter]);
+				System.out.println( counter+1+" "+itemsForSale[counter]+" "+priceList[counter]);
 				counter++;
 			}
 			
