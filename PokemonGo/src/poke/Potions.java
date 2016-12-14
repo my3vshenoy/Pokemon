@@ -4,9 +4,9 @@ import java.lang.*;
 
 public class Potions 
 {
-	public String[] potionArray = {"", "Potion", "Super Potion", "Hyper Potion"};
+	public static String[] potionArray = {"", "Potion", "Super Potion", "Hyper Potion"};
 	private String potion = "";
-	public int[] quantityPotionArray = {0, 3, 3, 3};
+	public static int[] quantityPotionArray = {0, 3, 3, 3};
 	private int quantityPotion = 0;
 	public int[] HPRestoredArray = {0, 20, 50, 100};
 	private int HPRestored = 0;
@@ -56,12 +56,6 @@ public class Potions
 	
 	public int getHPRestored()
 		{return HPRestored;}
-	
-	public void buyPotion(int itemSelected)
-	{
-		quantityPotion = ++quantityPotionArray[itemSelected];
-		System.out.println("You now have "+quantityPotionArray[itemSelected]+ " " +potionArray[itemSelected] +"s.");
-	}
 	
 	public Pokemon usePotions(Pokemon userPokemon)
 	{

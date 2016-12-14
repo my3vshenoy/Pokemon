@@ -8,8 +8,6 @@ public class PokeStore {
 	public int listLength=itemsForSale.length;
 	public int itemSelected = 0;
 	Player player = new Player(null);
-	Potions potionObj = new Potions();
-	Pokeballs pokeballObj = new Pokeballs(null,0,0);
 	
 	public PokeStore(){
 	}
@@ -31,7 +29,7 @@ public class PokeStore {
 			}
 			
 			//notify about option to exit store
-			System.out.println("If you would like to exit the store type 7.");
+			System.out.println("7 Exit");
 			
 			//user input
 			itemSelected = new Scanner(System.in).nextInt();	
@@ -68,13 +66,15 @@ public class PokeStore {
 				case 1:
 				case 2:
 				case 3:
-					pokeballObj.buyPokeball(itemSelected);
+					Pokeballs.quantityBallArray[itemSelected]++;
+					System.out.println("You now have "+Pokeballs.quantityBallArray[itemSelected]+ " " +Pokeballs.pokeballArray[itemSelected] +"s.");
 					flag = 0;
 					break;
 				case 4: 
 				case 5:
 				case 6:
-					potionObj.buyPotion(itemSelected-3);
+					Potions.quantityPotionArray[itemSelected-3]++;
+					System.out.println("You now have "+Potions.quantityPotionArray[itemSelected-3]+ " " +Potions.potionArray[itemSelected-3] +"s.");
 					flag = 0;
 					break;
 				default: 

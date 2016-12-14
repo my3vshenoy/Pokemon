@@ -3,11 +3,11 @@ import java.util.Scanner;
 
 public class Pokeballs 
 {
-	private String[] pokeballArray = {"", "Pokeball", "Greatball", "Ultraball"};
+	public static String[] pokeballArray = {"", "Pokeball", "Greatball", "Ultraball"};
 	private String pokeballName = "";
-	private int[] quantityBallArray = {0, 3, 3, 3};
+	public static int[] quantityBallArray = {0, 3, 3, 3};
 	private int quantityBall = 0;
-	private double[] ballModifierArray = {0, 0, 0.1, 0.2};
+	public double[] ballModifierArray = {0, 0, 0.1, 0.2};
 	private double ballModifier = 0.0;
 	private int ballSelection = 0;
 
@@ -44,12 +44,6 @@ public class Pokeballs
 	
 	public double getBallModifier()
 		{return ballModifier;}
-
-	public void buyPokeball(int itemSelected)
-	{
-		quantityBall = ++quantityBallArray[itemSelected];
-		System.out.println("You now have "+quantityBallArray[itemSelected]+ " " +pokeballArray[itemSelected] +"s.");
-	}
 
 	public void usePokeballs(Pokemon opponentPokemon)
 	{
