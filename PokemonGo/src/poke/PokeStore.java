@@ -9,7 +9,7 @@ public class PokeStore {
 	public int itemSelected = 0;
 	Player player = new Player(null);
 	Potions potionObj = new Potions();
-//	Pokeballs pokeballObj = new Pokeballs(null,0,0);
+	Pokeballs pokeballObj = new Pokeballs(null,0,0);
 	
 	public PokeStore(){
 	}
@@ -36,6 +36,14 @@ public class PokeStore {
 			//user input
 			itemSelected = new Scanner(System.in).nextInt();	
 			
+			//check for valid selection
+			if(itemSelected > 7 || itemSelected < 0)
+			{
+				flag = 1;
+				System.out.println("That is not a valid selection from the PokeStore.");
+				continue;
+			}
+			
 			//check if user wants to exit store
 			if(itemSelected == 7)
 			{
@@ -44,7 +52,7 @@ public class PokeStore {
 			}
 			
 			//Check if there is enough money to buy
-			if(player.getMoney()-priceList[itemSelected-1] > 0)	
+			if(player.getMoney()-priceList[itemSelected-1] >= 0)	
 				player.useMoney(priceList[itemSelected-1]);	
 			else 
 			{
@@ -60,7 +68,7 @@ public class PokeStore {
 				case 1:
 				case 2:
 				case 3:
-//					pokeballObj.buyPokeball(itemSelected);
+					pokeballObj.buyPokeball(itemSelected);
 					flag = 0;
 					break;
 				case 4: 

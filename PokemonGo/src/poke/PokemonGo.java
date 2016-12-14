@@ -18,10 +18,12 @@ public class PokemonGo {
 
 		Pokemon[] pokemonTeamBefore = new Pokemon[100];
 		Pokemon[] pokemonTeamAfter = new Pokemon[100];
+<<<<<<< HEAD
 		Pokemon opponentPokemon;
 		Potions potions = new Potions(null,0,0);
+=======
+>>>>>>> origin/master
 		Player playerObj =  new Player("Player 1");
-		//Pokeballs pokeballs = new Pokeballs(null,0,0);
 		Battle batteObj = new Battle();
 		PokeStore shopObj = new PokeStore();
 		EvolvablePokemon ePokemon = new EvolvablePokemon("Ivysaur","Grass","Poison",null,null,156,350,0,3,100,null);
@@ -268,65 +270,7 @@ public class PokemonGo {
 	//				//	int damage = (ePokeabilityPower*Strength*multiplier1*multiplier2)/100 //Damage= 
 	//							batteObj.opponentPokemon.setHP(ePokemon.HP-damage);
 	//					break;
-	//				case 2: //display the list of Potion items
-	//						//accept input from the user
-	//						//use another switch statement to call the usePotion method of the selected potion
-	//					String Potion;
-	//					System.out.println("Choose your potion: /n 1 - Potion1/n 2 - Potion2/n 3 - Potion3");
-	//					String Potion1, Potion2, Potion3;
-	//					Scanner reader1 = new Scanner (System.in);
-	//					String input = reader1. nextLine();
-	//					
-	//					if (Potion==Potion1)
-	//					{Pokemon.getHP
-	//							settHP(HP=HP*2);
-	//							}
-	//					else if(Potion==Potion2)
-	//					{
-	//							setHP(HP=HP*4);
-	//							}
-	//					else if (Potion==Potion3)
-	//					{
-	//							setHP(HP=HP*4);
-	//							}
-	//					else
-	//					{
-	//						System.out.println("Invalid Potion");
-	//					}
-	//						//accept input from the user
-	//						//use another switch statement to call the usePotion method of the selected potion
-	//					break;
-	//				case 3: 
-	//		//need better error correction 
-	//		//
-	//		  			//prompt pokeball selection
-	//		  			System.out.println("Which type of pokeball do you want to use: (choose from 1~3)");
-	//		  			System.out.printf("1. Pokeball(%d)%n2. Greatball(%d)%n3. Ultraball(%d)%n", 
-	//		  				quantityBall[1], quantityBall[2], quantityBall[3]);
-	//		  			//accept input from the user
-	//		  			ballSelection = new Scanner(System.in).nextInt();
-	//		  			System.out.println();
-	//		  			//reduce pokeball count by 1
-	//		  			if(quantityBall[ballSelection]>0)
-	//		  			{
-	//		  				quantityBall[ballSelection]--;
-	//	  					catchRate = (maxHP2 - (double) pokemon2.getHP()) / maxHP2 * ballModifier[ballSelection]; 
-	//	  					if(catchRate >= 0.85)
-	//	  						{
-	//	  						System.out.printf("You caught %s!%n", pokemon2.getName());
-	//	  						}
-	//	  					else
-	//	  						System.out.printf("You did not catch %s!%n", pokemon2.getName());
-	//					}
-	//		//need some catch rate formula  			
-	//		  			else
-	//		  				System.out.printf("You are out of %ss. You lost your turn.%n%n", pokeball[ballSelection]);  					
-	//					break;
-	//				default: System.out.println("That is not a valid selection. What would you like to do?");
-	//					}
-	//			}
-	//		
-	//	
+	//
 	//		//Logic for level up
 	//	System.out.println("Please enter your name:");
 	//	String playerName=input.nextLine();
