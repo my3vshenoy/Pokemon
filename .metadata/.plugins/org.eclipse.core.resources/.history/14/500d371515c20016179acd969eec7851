@@ -195,9 +195,9 @@ public class Battle {
 		System.out.println("we are now in Battle class");
 		System.out.println("Let the battle begin!");
 		System.out.println("What will you do?");
-		System.out.println(" 1: Attack \n 2: Use Potion\n 3: Use Pokeball");
+
 		while (flag !=0){
-			
+			System.out.println(" 1: Attack \n 2: Use Potion\n 3: Use Pokeball");
 			//accept's the user's selection and stores it locally
 			Scanner reader = new Scanner (System.in);
 			int selection = reader.nextInt();
@@ -212,7 +212,8 @@ public class Battle {
 				this.opponentPokemon.setHP(this.userPokemon.getHP()-userPokemonDamage);
 				
 				//After each attack, the player gains a random experience
-				playerObj.gainExperience(50 + (int)(Math.random() * 150));			
+				playerObj.gainExperience(0 + (int)(Math.random() * 150));
+				
 				System.out.println("Score:\n"+this.userPokemon.getName()+": "+this.userPokemon.getHP()+"\t\t"+this.opponentPokemon.getName()+": "+this.opponentPokemon.getHP());
 				System.out.println(this.opponentPokemon.getName()+"'s turn to attack you");
 				this.userPokemon.setHP(this.opponentPokemon.getHP()-opponentPokemonDamage);
@@ -245,15 +246,12 @@ public class Battle {
 			flag = 0;
 			//System.out.println("Score:\n"+this.userPokemon.getName()+": "+this.userPokemon.getHP()+"\t\t"+this.opponentPokemon.getName()+": "+this.opponentPokemon.getHP());
 			System.out.println("Game Over...You are out of Power");
-			return;
+			System.exit(0);
 		}
 		else if(this.opponentPokemon.getHP()<=0){
 			flag = 0;
 			//System.out.println("Score:\n"+this.userPokemon.getName()+": "+this.userPokemon.getStrength()+"\t\t"+this.opponentPokemon.getName()+": "+this.opponentPokemon.getStrength());
 			System.out.println("You won against "+this.opponentPokemon.getName());
-		}
-		else{
-			System.out.println(" 1: Attack \n 2: Use Potion\n 3: Use Pokeball");
 		}
 	}
 	

@@ -76,7 +76,7 @@ public class Potions
 		//reduce potion count by 1
 		if(quantityPotionArray[potionSelection]>0)
 		{
-			quantityPotion = --quantityPotionArray[potionSelection];
+			quantityPotion = quantityPotionArray[potionSelection]--;
 			potion = potionArray[potionSelection];
 			HPRestored = HPRestoredArray[potionSelection];
 			System.out.println("Potion Status: \n"+ potion+ " left: "+quantityPotion+"\nHP Restored: "+HPRestored);

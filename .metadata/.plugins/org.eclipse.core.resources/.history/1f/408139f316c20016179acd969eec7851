@@ -212,7 +212,7 @@ public class Battle {
 				this.opponentPokemon.setHP(this.userPokemon.getHP()-userPokemonDamage);
 				
 				//After each attack, the player gains a random experience
-				playerObj.gainExperience(50 + (int)(Math.random() * 150));			
+				playerObj.gainExperience(50 + (int)(Math.random() * 500));			
 				System.out.println("Score:\n"+this.userPokemon.getName()+": "+this.userPokemon.getHP()+"\t\t"+this.opponentPokemon.getName()+": "+this.opponentPokemon.getHP());
 				System.out.println(this.opponentPokemon.getName()+"'s turn to attack you");
 				this.userPokemon.setHP(this.opponentPokemon.getHP()-opponentPokemonDamage);

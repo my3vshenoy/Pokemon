@@ -220,7 +220,7 @@ public class PokemonGo {
 				int index5 = Arrays.asList(types).indexOf(opponentPokemon.getType1());
 				int index6 = Arrays.asList(types).indexOf(opponentPokemon.getAbility2().getAbilityType());
 				//System.out.println(index+1);
-				batteObj.startBattle(pokemonTeamBefore[0], opponentPokemon, index1, index2, index3, index4, index5, index6, playerObj);
+				batteObj.startBattle(pokemonTeamBefore[0], opponentPokemon, index1, index2, index3, index4, index5, index6);
 				flag = 1;
 				break;
 			case 2:

@@ -62,7 +62,7 @@ public class Player implements Leveled_Object{
 	private String getLevelUPreward(int level, String message){
 		//For now provide credit to buy more stuff from store
 		//If we have time, we should give the player a new potion or Pokeball
-		int credit =(int)(Math.random()*200);
+		int credit =(int)(Math.random()*20);
 		//System.out.println("You gained free Pokemon Credit of "+ credit+". Redeem at the PokeStore\n\n" );
 		this.money += credit; 
 		return message+"\n"+"You gained free Pokemon Credit of "+ credit+". Redeem at the PokeStore\n\n";
