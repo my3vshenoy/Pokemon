@@ -1,5 +1,4 @@
 package poke;
-import java.util.Arrays;
 import java.util.Scanner;
 import java.awt.EventQueue;
 import java.awt.Graphics;
@@ -18,7 +17,6 @@ public class PokemonGo {
 
 		Pokemon[] pokemonTeamBefore = new Pokemon[100];
 		Pokemon[] pokemonTeamAfter = new Pokemon[100];
-		Pokemon opponentPokemon;
 		Potions potions = new Potions(null,0,0);
 		Player playerObj =  new Player("Player 1");
 		//Pokeballs pokeballs = new Pokeballs(null,0,0);
@@ -212,15 +210,7 @@ public class PokemonGo {
 			switch(selection){
 			case 1:
 				//call the Battle class
-				opponentPokemon = pokemonList[0 + (int)(Math.random() * 35)];
-				int index1 = Arrays.asList(types).indexOf(pokemonTeamBefore[0].getAbility1().getAbilityType());
-				int index2 = Arrays.asList(types).indexOf(pokemonTeamBefore[0].getType1());
-				int index3 = Arrays.asList(types).indexOf(pokemonTeamBefore[0].getAbility2().getAbilityType());
-				int index4 = Arrays.asList(types).indexOf(opponentPokemon.getAbility1().getAbilityType());
-				int index5 = Arrays.asList(types).indexOf(opponentPokemon.getType1());
-				int index6 = Arrays.asList(types).indexOf(opponentPokemon.getAbility2().getAbilityType());
-				//System.out.println(index+1);
-				batteObj.startBattle(pokemonTeamBefore[0], opponentPokemon, index1, index2, index3, index4, index5, index6);
+				batteObj.startBattle(pokemonTeamBefore[0], pokemonList[0 + (int)(Math.random() * 35)]);
 				flag = 1;
 				break;
 			case 2:

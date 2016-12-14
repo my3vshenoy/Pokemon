@@ -12,10 +12,6 @@ public class Battle {
 	public Pokemon userPokemon;
 	public Pokemon opponentPokemon;
 	public Pokeballs pokeballObj = new Pokeballs(null, 0, 0);
-
-	//Flag for battle
-	int flag = 1;
-
 	//public Player playerObj = new Player()
 
 	//initialize and array of String variables to store the names of the types
@@ -185,68 +181,45 @@ public class Battle {
 	//		}
 
 
-	public void startBattle(Pokemon userPokemon, Pokemon opponentPokemon, int index1, int index2, int index3, int index4, int index5, int index6){
+public void startBattle(Pokemon userPokemon, Pokemon opponentPokemon){
 
-		this.userPokemon = userPokemon;
-		this.opponentPokemon = opponentPokemon;
-		System.out.println("You are:"+this.userPokemon.getName());
-		System.out.println("You are fighting against:"+this.opponentPokemon.getName());
-		System.out.println("we are now in Battle class");
-		System.out.println("Let the battle begin!");
-		System.out.println("What will you do?");
+	this.userPokemon = userPokemon;
+	this.opponentPokemon = opponentPokemon;
+	System.out.println("You are:"+this.userPokemon.getName());
+	System.out.println("You are fighting against:"+this.opponentPokemon.getName());
+	System.out.println("we are now in Battle class");
+	System.out.println("Let the battle begin!");
+	System.out.println("What will you do?");
+	System.out.println(" 1: Attack \n 2: Use Potion\n 3: Use Pokeball");
 
-		while (flag !=0){
-			System.out.println(" 1: Attack \n 2: Use Potion\n 3: Use Pokeball");
-			//accept's the user's selection and stores it locally
-			Scanner reader = new Scanner (System.in);
-			int selection = reader.nextInt();
+	//accept's the user's selection and stores it locally
+	Scanner reader = new Scanner (System.in);
+	int selection = reader.nextInt();
 
-			//Applies the user's selection, and names the user's first pokemon accordingly
-			switch(selection)
-			{
-			case 1:
-				System.out.println("You attack first on "+this.opponentPokemon.getName());
-				int userPokemonDamage = (int)(this.userPokemon.getAbility1().getAbilityPower()*this.userPokemon.getStrength()*multiplier[index1][index2]*multiplier[index1][index3])/100;
-				int opponentPokemonDamage = (int)(this.opponentPokemon.getAbility1().getAbilityPower()*this.opponentPokemon.getStrength()*multiplier[index4][index5]*multiplier[index4][index6])/100;
-				
-				this.opponentPokemon.setStrength(this.opponentPokemon.getStrength()- (this.userPokemon.getHP()));
-				System.out.println(this.opponentPokemon.getName()+"'s turn to attack you");
-				this.userPokemon.setStrength(this.userPokemon.getStrength()-(this.opponentPokemon.getHP()));
-				//this.userPokemon.setHP(this.opponentPokemon.getHP()-opponentPokemonDamage);
-				
-				System.out.println("Score:\n"+this.userPokemon.getName()+": "+this.userPokemon.getStrength()+"\t\t"+this.opponentPokemon.getName()+": "+this.opponentPokemon.getStrength());
-				if(this.userPokemon.getHP()<=0){
-					flag = 0;
-					System.out.println("Score:\n"+this.userPokemon.getName()+": "+this.userPokemon.getStrength()+"\t\t"+this.opponentPokemon.getName()+": "+this.opponentPokemon.getStrength());
-					System.out.println("Game Over...You are out of Power");
-					System.exit(0);
-				}
-				else if(this.opponentPokemon.getHP()<=0){
-					flag = 0;
-					System.out.println("Score:\n"+this.userPokemon.getName()+": "+this.userPokemon.getStrength()+"\t\t"+this.opponentPokemon.getName()+": "+this.opponentPokemon.getStrength());
-					System.out.println("You won against "+this.opponentPokemon.getName());
-				}
-				break;
+	//Applies the user's selection, and names the user's first pokemon accordingly
+	switch(selection)
+	{
+	case 1:
+		System.out.println("Switch case 1 for Attack");
+		int damage = (int)(userPokemon.getAbility1().getAbilityPower()*userPokemon.getStrength()*multiplier[Arrays.asList(types).indexOf(userPokemon.getAbility1().getAbilityType())][1])/100;
+		this.opponentPokemon.setHP(this.opponentPokemon.getHP()-damage);
+		break;
 
-			case 2: 
-				System.out.println("Switch case 2 for Potions");
-				Potions potionObj = new Potions();
-				potionObj.usePotions();
-				flag =1;
-				break;
+	case 2: 
+		System.out.println("Switch case 2 for Potions");
+		Potions potionObj = new Potions();
+		potionObj.usePotions();
+		break;
 
-			case 3: 
-				System.out.println("Switch case 3 for Use Pokeballs");
-				//prompt pokeball selection
-				pokeballObj.usePokeballs(opponentPokemon);
-				flag = 1;
-				break;
-			default:
-				System.out.println("Not a valid option");
-				flag = 1;
-			}
-		}
+	case 3: 
+		System.out.println("Switch case 3 for Use Pokeballs");
+		//prompt pokeball selection
+		pokeballObj.usePokeballs(opponentPokemon);
+		break;
+	default:
+		System.out.println("Not a valid option");
 	}
+}
 }
 
 ////MAIN METHOD		

@@ -95,11 +95,11 @@ public class Pokemon implements Leveled_Object{
 
 	//Increases the level of the pokemon by 1
 	//Also increases the HP and strength stats by 10% of previous value
-public void levelUP(){
-//		HP= (int)HP*1.1;
-//		strength=(int)strength*1.1;
-//		level=level++;	
-}
+	public void levelUP(){
+		HP= (int)HP*1.1;
+		strength=(int)strength*1.1;
+		level=level++;	
+	}
 	public void gainExperience(int amount) {
 	}
 	public boolean enoughXPForNextLevel() {

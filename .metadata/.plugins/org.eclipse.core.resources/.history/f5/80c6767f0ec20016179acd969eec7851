@@ -209,9 +209,9 @@ public class Battle {
 				int userPokemonDamage = (int)(this.userPokemon.getAbility1().getAbilityPower()*this.userPokemon.getStrength()*multiplier[index1][index2]*multiplier[index1][index3])/100;
 				int opponentPokemonDamage = (int)(this.opponentPokemon.getAbility1().getAbilityPower()*this.opponentPokemon.getStrength()*multiplier[index4][index5]*multiplier[index4][index6])/100;
 				
-				this.opponentPokemon.setStrength(this.opponentPokemon.getStrength()- (this.userPokemon.getHP()));
+				this.opponentPokemon.setStrength(this.opponentPokemon.getStrength()- (this.userPokemon.getHP()+userPokemonDamage));
 				System.out.println(this.opponentPokemon.getName()+"'s turn to attack you");
-				this.userPokemon.setStrength(this.userPokemon.getStrength()-(this.opponentPokemon.getHP()));
+				this.userPokemon.setStrength(this.userPokemon.getStrength()- (this.opponentPokemon.getHP()+opponentPokemonDamage));
 				//this.userPokemon.setHP(this.opponentPokemon.getHP()-opponentPokemonDamage);
 				
 				System.out.println("Score:\n"+this.userPokemon.getName()+": "+this.userPokemon.getStrength()+"\t\t"+this.opponentPokemon.getName()+": "+this.opponentPokemon.getStrength());
