@@ -10,7 +10,6 @@ public class Battle {
 	public Pokemon userPokemon;
 	public Pokemon opponentPokemon;
 	public Pokeballs pokeballObj = new Pokeballs(null, 0, 0);
-	//public Player playerObj = new Player()
 
 	//initialize and array of String variables to store the names of the types
 	//This will be necessary to look up those types in the "multiplier" matrix that follows

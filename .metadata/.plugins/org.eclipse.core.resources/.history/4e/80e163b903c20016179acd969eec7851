@@ -18,13 +18,11 @@ public class PokemonGo {
 		Pokemon[] pokemonTeamBefore = new Pokemon[100];
 		Pokemon[] pokemonTeamAfter = new Pokemon[100];
 		Potions potions = new Potions(null,0,0);
-		Player playerObj =  new Player("Player 1");
 		//Pokeballs pokeballs = new Pokeballs(null,0,0);
 		Battle batteObj = new Battle();
 		PokeStore shopObj = new PokeStore();
 		EvolvablePokemon ePokemon = new EvolvablePokemon("Ivysaur","Grass","Poison",null,null,156,350,0,3,100,null);
-		Scanner reader1 = new Scanner(System.in);
-		
+
 		//Flag for user to exit the game. Can have 0 or 1
 		int flag = 1;
 
@@ -158,9 +156,7 @@ public class PokemonGo {
 		//It will prompt the user to select a starting pokemon, 
 		//then add that pokemon to their team
 		System.out.println("Welcome to the world of Pokemon\n");
-		System.out.println("Enter Player name:");
-		playerObj.setName(reader1.nextLine());
-		System.out.println("Hey "+playerObj.getName()+",  It's time to explore!");
+		System.out.println("It's time to explore!");
 		System.out.println("But wait! It's dangerous out there! Take one of these:");
 
 		//Display images of the three starter pokemon
@@ -168,7 +164,7 @@ public class PokemonGo {
 		System.out.println("Which one will you choose?");
 
 		//accepts the user's selection
-		
+		Scanner reader1 = new Scanner(System.in);
 		int selection;
 		
 		while (flag != 0){

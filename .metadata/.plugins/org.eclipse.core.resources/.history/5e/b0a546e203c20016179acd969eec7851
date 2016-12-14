@@ -160,7 +160,7 @@ public class PokemonGo {
 		System.out.println("Welcome to the world of Pokemon\n");
 		System.out.println("Enter Player name:");
 		playerObj.setName(reader1.nextLine());
-		System.out.println("Hey "+playerObj.getName()+",  It's time to explore!");
+		System.out.println("It's time to explore!");
 		System.out.println("But wait! It's dangerous out there! Take one of these:");
 
 		//Display images of the three starter pokemon
