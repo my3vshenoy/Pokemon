@@ -1,16 +1,7 @@
-
 package poke;
 
 public class Pokemon implements Leveled_Object{
 
-	/**
-	 * @param args
-	 */
-	//	public static void main(String[] args) {
-	//		// TODO Auto-generated method stub
-	//		System.out.println("Welcome to Pokemon Go\n");
-	//		System.out.println("Let the coding begin");
-	//		public class Pokemon {
 	//declaring the instance variables (or attributes) of the pokemon
 	protected String name;
 	private String type1;
@@ -21,7 +12,6 @@ public class Pokemon implements Leveled_Object{
 	protected int HP;
 	protected int experience;
 	protected int level;
-	private Potions potions;
 
 	//constructor initializes the variables
 	public Pokemon (String name, String type1, String type2, Ability ability1, Ability ability2, 
