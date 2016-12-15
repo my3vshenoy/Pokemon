@@ -209,14 +209,14 @@ public class Battle {
 				System.out.println("You attack first on "+this.opponentPokemon.getName());
 				int userPokemonDamage = (int)(this.userPokemon.getAbility1().getAbilityPower()*this.userPokemon.getStrength()*multiplier[index1][index2]*multiplier[index1][index3])/100;
 				int opponentPokemonDamage = (int)(this.opponentPokemon.getAbility1().getAbilityPower()*this.opponentPokemon.getStrength()*multiplier[index4][index5]*multiplier[index4][index6])/100;
-				this.opponentPokemon.setHP(this.userPokemon.getHP()-userPokemonDamage);
+				this.opponentPokemon.reduceHP(userPokemonDamage);
 				
 				//After each attack, the player gains a random experience
 				checkEvolutionAndPlayerXPStatus(playerObj);
 			
 				System.out.println("\n\nScore:\n"+this.userPokemon.getName()+": "+this.userPokemon.getHP()+"\t\t"+this.opponentPokemon.getName()+": "+this.opponentPokemon.getHP());
 				System.out.println(this.opponentPokemon.getName()+"'s turn to attack you");
-				this.userPokemon.setHP(this.opponentPokemon.getHP()-opponentPokemonDamage);
+				this.userPokemon.reduceHP(opponentPokemonDamage);
 				System.out.println("\n\nScore:\n"+this.userPokemon.getName()+": "+this.userPokemon.getHP()+"\t\t"+this.opponentPokemon.getName()+": "+this.opponentPokemon.getHP());
 				
 				checkWinner(0);
