@@ -85,6 +85,9 @@ public class Pokemon implements Leveled_Object{
 	public int getLevel()
 	{return level;}
 
+	public void reduceHP(int HP)
+	{this.HP -= HP;}	
+	
 	//Increases the level of the pokemon by 1
 	//Also increases the HP and strength stats by 10% of previous value
 //public String levelUP(){

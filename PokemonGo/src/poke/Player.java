@@ -1,4 +1,3 @@
-
 package poke;
 
 public class Player implements Leveled_Object{
@@ -31,12 +30,12 @@ public class Player implements Leveled_Object{
 	}
 
 	public void gainExperience(int amount){
-		
 		this.experience+=amount;
-		String message = "";
+//		String message = "";
 		while(enoughXPForNextLevel()) 
-			 message = levelUP();
-		System.out.println(message);
+			levelUP();
+//			message = levelUP();
+//		System.out.println(message);
 	}
 	
 	public int getMoney(){
@@ -48,10 +47,11 @@ public class Player implements Leveled_Object{
 	}
 	
 	public String levelUP(){
-		
 		this.level++;
-		String message = "Congratulations! You just leveled up to Level "+getLevel()+"!";
-		return getLevelUPreward(this.level, message);
+		System.out.println("Congratulations! You just leveled up to Level "+getLevel()+"!");
+		getLevelUPreward(this.level);
+//		String message = "Congratulations! You just leveled up to Level "+getLevel()+"!";
+//		return getLevelUPreward(this.level, message);
 		
 	}
 	
@@ -59,14 +59,13 @@ public class Player implements Leveled_Object{
 		return this.experience>=XPNeededForNextLevelPlayer[level];
 	}
 	
-	private String getLevelUPreward(int level, String message){
-		//For now provide credit to buy more stuff from store
+//	private String getLevelUPreward(int level, String message){
+	private void getLevelUPreward(int level){
+	//For now provide credit to buy more stuff from store
 		//If we have time, we should give the player a new potion or Pokeball
 		int credit =(int)(Math.random()*200);
-		//System.out.println("You gained free Pokemon Credit of "+ credit+". Redeem at the PokeStore\n\n" );
+		System.out.println("You gained free Pokemon Credit of "+ credit+". Redeem at the PokeStore\n\n" );
 		this.money += credit; 
-		return message+"\n"+"You gained free Pokemon Credit of "+ credit+". Redeem at the PokeStore\n\n";
+//		return message+"\n"+"You gained free Pokemon Credit of "+ credit+". Redeem at the PokeStore\n\n";
 	}
-
 }
- 

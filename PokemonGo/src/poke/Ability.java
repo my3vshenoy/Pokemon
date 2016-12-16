@@ -1,28 +1,23 @@
-/**
- * 
- */
 package poke;
 import java.util.*;
-
-/**
- * @author my3shenoy
- *
- */
-
 
 public class Ability {
 	private String abilityName;		
 	private String abilityType;
 	private int abilityPower;
 
-
+	public Ability(){
+		this.abilityName="????";
+		this.abilityType="????";
+		this.abilityPower=0;
+	}
+	
 	//constructor method to initialize the variables
-	public Ability (String abilityName, String abilityType, int abilityPower)
-		{
+	public Ability (String abilityName, String abilityType, int abilityPower){
 		this.abilityName = abilityName;
 		this.abilityType = abilityType;
 		this.abilityPower = abilityPower;
-		}
+	}
 	
 	//Set methods to assign values to the abilities
 	public void setAbilityName(String abilityName)

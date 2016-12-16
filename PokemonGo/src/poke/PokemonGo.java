@@ -20,12 +20,11 @@ public class PokemonGo {
 		Pokemon[] pokemonTeamAfter = new Pokemon[100];
 
 		Pokemon opponentPokemon;
-		Potions potions = new Potions(null,0,0);
 		Player playerObj =  new Player("Player 1");
 		Battle batteObj = new Battle();
 		PokeStore shopObj = new PokeStore();
-		EvolvablePokemon ePokemon = new EvolvablePokemon("Ivysaur","Grass","Poison",null,null,156,350,0,3,100,null);
-		Scanner reader1 = new Scanner(System.in);
+//		EvolvablePokemon ePokemon = new EvolvablePokemon("Ivysaur","Grass","Poison",null,null,156,350,0,3,100,null);
+//		Scanner reader1 = new Scanner(System.in);
 		
 		//Flag for user to exit the game. Can have 0 or 1
 		int flag = 1;
@@ -242,32 +241,6 @@ public class PokemonGo {
 			}
 		}
 	}
-	//		//Doesn't this stuff belong in the Battle class? We should sort this out
-	//		System.out.println("Let the battle begin!");
-	//		System.out.println("What will you do?");
-	//		System.out.println(" 1: Attack  2: Use Potion  3: Use Pokeball");
-	//		
-	//		//Provide optios to the User to pick his Pokemon
-	//		
-	////		System.out.println("Pick your Pokemon to start:");
-	////		System.out.println("1: Pikachu");
-	//		//Reassign the ePokemon Obj with selected data
-	//		//Options: Battle, Use the store, Exit
-	//		//Player Name local variable
-	//		//Add the pokeball logic to add the captured pokeball to the pokemonTeamAfter array
-	//		//Player / Pokemo class, make the pokemon stronger when it levels up!!!!!
-	//		
-	//		//accept's the user's selection and stores it locally
-	//				Scanner reader = new Scanner (System.in);
-	//				int selection = reader.nextInt();
-	//					
-	//			//Applies the user's selection, and names the user's first pokemon accordingly
-	//				switch(selection)
-	//					{
-	//				case 1://TODO write formula to pull th us
-	//				//	int damage = (ePokeabilityPower*Strength*multiplier1*multiplier2)/100 //Damage= 
-	//							batteObj.opponentPokemon.setHP(ePokemon.HP-damage);
-	//					break;
 	//
 	//		//Logic for level up
 	//	System.out.println("Please enter your name:");
