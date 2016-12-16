@@ -12,6 +12,8 @@ public class Battle {
 	public Pokemon userPokemon;
 	public Pokemon opponentPokemon;
 	public Pokeballs pokeballObj = new Pokeballs(null, 0, 0);
+	public int userPokemonDamage = 0;
+	public int opponentPokemonDamage = 0;
 
 	//Flag for battle
 	int flag = 1;
@@ -161,8 +163,8 @@ public class Battle {
 			{
 			case 1:
 				System.out.println("You attack first on "+this.opponentPokemon.getName());
-				int userPokemonDamage = (int)(this.userPokemon.getAbility1().getAbilityPower()*this.userPokemon.getStrength()*multiplier[index1][index2]*multiplier[index1][index3])/100;
-				int opponentPokemonDamage = (int)(this.opponentPokemon.getAbility1().getAbilityPower()*this.opponentPokemon.getStrength()*multiplier[index4][index5]*multiplier[index4][index6])/100;
+				userPokemonDamage = (int)(this.userPokemon.getAbility1().getAbilityPower()*this.userPokemon.getStrength()*multiplier[index1][index2]*multiplier[index1][index3])/100;
+				opponentPokemonDamage = (int)(this.opponentPokemon.getAbility1().getAbilityPower()*this.opponentPokemon.getStrength()*multiplier[index4][index5]*multiplier[index4][index6])/100;
 				this.opponentPokemon.reduceHP(userPokemonDamage);
 				
 				//After each attack, the player gains a random experience
@@ -181,6 +183,12 @@ public class Battle {
 				Potions potionObj = new Potions();
 //				this.userPokemon = potionObj.usePotions(this.userPokemon);
 				potionObj.usePotions(this.userPokemon);
+				
+				//opponent attack
+				System.out.println(this.opponentPokemon.getName()+"'s turn to attack you");
+				this.userPokemon.reduceHP(opponentPokemonDamage);
+				System.out.println("\n\nScore:\n"+this.userPokemon.getName()+": "+this.userPokemon.getHP()+"\t\t"+this.opponentPokemon.getName()+": "+this.opponentPokemon.getHP());
+				
 				checkWinner(0);
 				flag =1;
 				break;
@@ -192,6 +200,13 @@ public class Battle {
 				flag = 1;
 				if(pokeballObj.getCaughtStatus() == true)
 					flag = 0;
+				else{
+					//opponent attack
+					System.out.println(this.opponentPokemon.getName()+"'s turn to attack you");
+					this.userPokemon.reduceHP(opponentPokemonDamage);
+					System.out.println("\n\nScore:\n"+this.userPokemon.getName()+": "+this.userPokemon.getHP()+"\t\t"+this.opponentPokemon.getName()+": "+this.opponentPokemon.getHP());
+					checkWinner(0);
+				}
 				break;
 			default:
 				System.out.println("Not a valid option");
