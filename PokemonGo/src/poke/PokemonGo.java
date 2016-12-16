@@ -188,7 +188,7 @@ public class PokemonGo {
 			flag = 0;
 			break;
 		case 3:
-			System.out.println("You've chosen Charmander, the Water-type!");
+			System.out.println("You've chosen Charmander, the Fire-type!");
 			pokemonTeamBefore[0]=Charmander;
 			flag = 0;
 			break;				

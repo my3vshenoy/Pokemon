@@ -57,7 +57,8 @@ public class Potions
 	public int getHPRestored()
 		{return HPRestored;}
 	
-	public Pokemon usePotions(Pokemon userPokemon)
+//	public Pokemon usePotions(Pokemon userPokemon)
+	public void usePotions(Pokemon userPokemon)
 	{
 		System.out.println("Which type of potion do you want to use: (choose from 1~3)");
 		System.out.println("1. Potion ("+quantityPotionArray[1]+")");
@@ -66,24 +67,36 @@ public class Potions
 		 
 		//accept input from the user
 		potionSelection = new Scanner(System.in).nextInt();
-		System.out.println(potionSelection);
-		//reduce potion count by 1
-		if(quantityPotionArray[potionSelection]>0)
+		
+		//error correction on the input
+		while(potionSelection > 3 || potionSelection < 1 || quantityPotionArray[potionSelection] == 0)
 		{
+			System.out.println("That is not a valid selection.");
+			System.out.println("Which type of potion do you want to use: (choose from 1~3)");
+			System.out.println("1. Potion ("+quantityPotionArray[1]+")");
+			System.out.println("2. Super Potion ("+quantityPotionArray[2]+")");
+			System.out.println("3. Hyper Potion ("+quantityPotionArray[3]+")");
+			potionSelection = new Scanner(System.in).nextInt();	
+		}
+		
+		//		System.out.println(potionSelection);
+		//reduce potion count by 1
+//		if(quantityPotionArray[potionSelection]>0)
+//		{
 			quantityPotion = --quantityPotionArray[potionSelection];
 			potion = potionArray[potionSelection];
 			HPRestored = HPRestoredArray[potionSelection];
 			userPokemon.setHP(userPokemon.getHP()+HPRestored);
 			System.out.println("Potion Status: \n"+ potion+ " left: "+quantityPotion+"\nHP Restored: "+HPRestored);
-		}
-		else
-		{
-			quantityPotion = 0;
-			potion = potionArray[potionSelection];
-			HPRestored = 0;
-			System.out.println("You don't have enough "+potion);
-		}
-		return userPokemon;
+//		}
+//		else
+//		{
+//			quantityPotion = 0;
+//			potion = potionArray[potionSelection];
+//			HPRestored = 0;
+//			System.out.println("You don't have enough "+potion);
+//		}
+//		return userPokemon;
 	}				
 }
 

@@ -147,9 +147,10 @@ public class Battle {
 		System.out.println("You are fighting against:"+this.opponentPokemon.getName());
 		//System.out.println("we are now in Battle class");
 		System.out.println("\nLet the battle begin!");
-		System.out.println("What will you do?");
-		System.out.println(" 1: Attack \n 2: Use Potion\n 3: Use Pokeball");
+
 		while (flag !=0){
+			System.out.println("What will you do?");
+			System.out.println(" 1: Attack \n 2: Use Potion\n 3: Use Pokeball");
 			
 			//accept's the user's selection and stores it locally
 			Scanner reader = new Scanner (System.in);
@@ -178,7 +179,8 @@ public class Battle {
 			case 2: 
 //				System.out.println("Switch case 2 for Potions");
 				Potions potionObj = new Potions();
-				this.userPokemon = potionObj.usePotions(this.userPokemon);
+//				this.userPokemon = potionObj.usePotions(this.userPokemon);
+				potionObj.usePotions(this.userPokemon);
 				checkWinner(0);
 				flag =1;
 				break;
@@ -210,11 +212,11 @@ public class Battle {
 			System.out.println("You won against "+this.opponentPokemon.getName());
 			return;
 		}
-		else{System.out.println("\n 1: Attack \n 2: Use Potion\n 3: Use Pokeball");}
+//		else{System.out.println("\n 1: Attack \n 2: Use Potion\n 3: Use Pokeball");}
 	}
 	
 	public void checkEvolutionAndPlayerXPStatus(Player playerObj){
 		playerObj.gainExperience(50 + (int)(Math.random() * 150));
-		userPokemon.gainExperience(1 + (int)(Math.random() * 4));
+		userPokemon.gainExperience(1 + (int)(Math.random() * 9));
 	}
 }
