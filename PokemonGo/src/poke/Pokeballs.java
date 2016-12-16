@@ -53,35 +53,31 @@ public class Pokeballs
 		
 		//accept input from the user
 		ballSelection = new Scanner(System.in).nextInt();
-		System.out.println();
+
+		while(ballSelection > 3 || ballSelection < 1 || quantityBallArray[ballSelection] == 0)
+		{
+			System.out.println("That is not a valid selection.");
+			System.out.println("Which type of pokeball do you want to use: (choose from 1~3)");
+			System.out.println("1: Pokeball("+ quantityBallArray[1] +")\n2: Greatball("+quantityBallArray[2]+")\n3. Ultraball("+quantityBallArray[3]+")"); 
+			ballSelection = new Scanner(System.in).nextInt();	
+		}
+		
 		setPokeballsFromUserInput(pokeballArray[ballSelection], quantityBallArray[ballSelection], ballModifierArray[ballSelection]);
 		
 		//reduce pokeball count by 1
-		if(quantityBallArray[ballSelection]>0)
-			{
-	
-				quantityBallArray[ballSelection]--;
-				catchRate = (double) opponentPokemon.getHP() / maxHP - ballModifierArray[ballSelection]; 
-				if(catchRate <= 0.25)
-				{
-					System.out.println("You caught "+opponentPokemon.getName());
-					//If you catch the pokemon, the opponent pokemon should be added to the player's team
-				}
-				else{
-					System.out.println("You did not catch "+opponentPokemon.getName());
-				}
+		quantityBallArray[ballSelection]--;
+		catchRate = (double) opponentPokemon.getHP() / maxHP - ballModifierArray[ballSelection]; 
+		if(catchRate <= 0.25)
+		{
+			System.out.println("You caught "+opponentPokemon.getName());
+			//If you catch the pokemon, the opponent pokemon should be added to the player's team
+		}
+		else{
+			System.out.println("You did not catch "+opponentPokemon.getName());
+		}
 							
-				quantityBall = quantityBallArray[ballSelection]--;
-				pokeballName = pokeballArray[ballSelection];
-				ballModifier = ballModifierArray[ballSelection];
-			}
-	
-		else
-			{
-				quantityBall = 0;
-				pokeballName = pokeballArray[ballSelection];
-				ballModifier = 0;
-				System.out.println("You are out of "+pokeballArray[ballSelection]+". You lost your turn.%n%n" ); 
-			}
+		quantityBall = quantityBallArray[ballSelection];
+		pokeballName = pokeballArray[ballSelection];
+		ballModifier = ballModifierArray[ballSelection];
 	}
 }
