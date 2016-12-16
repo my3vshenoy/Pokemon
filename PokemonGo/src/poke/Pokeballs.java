@@ -11,6 +11,7 @@ public class Pokeballs
 	private double ballModifier = 0.0;
 	private int ballSelection = 0;
 
+	private boolean caughtStatus = false;
 	private double catchRate = 0.0;
 	private int maxHP = 100;
 
@@ -36,6 +37,9 @@ public class Pokeballs
 	public void setBallModifier(double ballModifier)
 		{this.ballModifier = ballModifierArray[ballSelection];}
 	
+	public void setCaughtStatus(boolean caughtStatus)
+		{this.caughtStatus = caughtStatus;}
+	
 	public String getPokeball()
 		{return pokeballName;}
 	
@@ -44,7 +48,10 @@ public class Pokeballs
 	
 	public double getBallModifier()
 		{return ballModifier;}
-
+	
+	public boolean getCaughtStatus()
+		{return caughtStatus;}
+	
 	public void usePokeballs(Pokemon opponentPokemon)
 	{
 		
@@ -66,18 +73,19 @@ public class Pokeballs
 		
 		//reduce pokeball count by 1
 		quantityBallArray[ballSelection]--;
+		quantityBall = quantityBallArray[ballSelection];
+		pokeballName = pokeballArray[ballSelection];
+		ballModifier = ballModifierArray[ballSelection];
 		catchRate = (double) opponentPokemon.getHP() / maxHP - ballModifierArray[ballSelection]; 
 		if(catchRate <= 0.25)
 		{
 			System.out.println("You caught "+opponentPokemon.getName());
+			caughtStatus = true;
+			return;
 			//If you catch the pokemon, the opponent pokemon should be added to the player's team
 		}
 		else{
 			System.out.println("You did not catch "+opponentPokemon.getName());
 		}
-							
-		quantityBall = quantityBallArray[ballSelection];
-		pokeballName = pokeballArray[ballSelection];
-		ballModifier = ballModifierArray[ballSelection];
 	}
 }

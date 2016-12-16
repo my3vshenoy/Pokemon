@@ -190,6 +190,8 @@ public class Battle {
 				//prompt pokeball selection
 				pokeballObj.usePokeballs(opponentPokemon);
 				flag = 1;
+				if(pokeballObj.getCaughtStatus() == true)
+					flag = 0;
 				break;
 			default:
 				System.out.println("Not a valid option");
