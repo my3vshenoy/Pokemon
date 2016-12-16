@@ -24,7 +24,7 @@ public class PokemonGo {
 		Battle batteObj = new Battle();
 		PokeStore shopObj = new PokeStore();
 //		EvolvablePokemon ePokemon = new EvolvablePokemon("Ivysaur","Grass","Poison",null,null,156,350,0,3,100,null);
-//		Scanner reader1 = new Scanner(System.in);
+		Scanner reader1 = new Scanner(System.in);
 		
 		//Flag for user to exit the game. Can have 0 or 1
 		int flag = 1;

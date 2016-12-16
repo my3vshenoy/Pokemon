@@ -46,7 +46,8 @@ public class Player implements Leveled_Object{
 		this.money-=price;
 	}
 	
-	public String levelUP(){
+//	public String levelUP(){
+	public void levelUP(){
 		this.level++;
 		System.out.println("Congratulations! You just leveled up to Level "+getLevel()+"!");
 		getLevelUPreward(this.level);

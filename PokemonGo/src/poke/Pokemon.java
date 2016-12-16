@@ -8,7 +8,7 @@ public class Pokemon implements Leveled_Object{
 	private String type2;
 	protected Ability ability1;
 	protected Ability ability2;
-	private int strength;
+	protected int strength;
 	protected int HP;
 	protected int experience;
 	protected int level;
@@ -107,19 +107,24 @@ public class Pokemon implements Leveled_Object{
 	
 	public void gainExperience(int amount){
 		this.experience+=amount;
-		String message = "";
+//		String message = "";
 		while(enoughXPForNextLevel()) 
-			 message = levelUP();
-		System.out.println(message);
+			levelUP();
+//			message = levelUP();
+//		System.out.println(message);
 	}
 	
-	public String levelUP(){
-		
-		HP= HP*2;
-		strength=strength*2;
-		level=level++;
-		return "You are now at level "+level;
-		
+//	public String levelUP(){
+//		
+//		HP= HP*2;
+//		strength=strength*2;
+//		level=level++;
+//		return "You are now at level "+level;
+	public void levelUP(){		
+		this.HP=(int)(HP*1.1);
+		this.strength=(int)(strength*1.1);
+		this.level++;
+		System.out.println(getName()+" has leveled up to LV "+getLevel()+"!");
 	}
 	
 	public boolean enoughXPForNextLevel(){
