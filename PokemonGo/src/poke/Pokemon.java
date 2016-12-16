@@ -132,4 +132,3 @@ public class Pokemon implements Leveled_Object{
 	}
 	
 }
-

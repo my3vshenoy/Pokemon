@@ -260,6 +260,4 @@ public class PokemonGo {
 	//		System.out.println();
 	//	}
 	//}
-
-
 }
