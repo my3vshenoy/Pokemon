@@ -70,7 +70,7 @@ public class PokemonGo {
 		Ability ability15 = new Ability("Nigh Shade","Ghost",55);
 		Ability ability16 = new Ability("Shadow Ball","Ghost",85);
 		Ability ability17 = new Ability("Bullet Seed","Grass",50);
-		Ability ability18 = new Ability("Razor Lead","Grass",75);
+		Ability ability18 = new Ability("Razor Leaf","Grass",75);
 		Ability ability19 = new Ability("Solarbeam","Grass",120);
 		Ability ability20 = new Ability("Mud Shot","Ground",40);
 		Ability ability21 = new Ability("Earthquake","Ground",100);
@@ -166,7 +166,7 @@ public class PokemonGo {
 
 		//Display images of the three starter pokemon
 		System.out.println(" 1: Bulbasaur  2: Squirtle  3: Charmander");
-		System.out.println("Which one will you choose?");
+		System.out.println("Which one will you choose? (choose from 1~3)");
 
 		//accepts the user's selection
 		
@@ -204,7 +204,7 @@ public class PokemonGo {
 		//Use a switch statement to call up whichever class the user chooses
 		System.out.println("\n\nNow that you have a Pokemon partner, you're ready for anything.");
 		while (flag != 0){
-			System.out.println("What would you like to do");
+			System.out.println("What would you like to do? (choose from 1~3)");
 			System.out.println("1: Fight Wild Pokemon  2:Visit the PokeStore 3: Exit the game");
 			selection = reader1.nextInt();
 
@@ -260,4 +260,6 @@ public class PokemonGo {
 	//		System.out.println();
 	//	}
 	//}
+
+
 }

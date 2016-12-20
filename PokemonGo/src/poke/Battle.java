@@ -3,12 +3,15 @@ package poke;
 import java.util.Scanner;
 import java.lang.*;
 import java.util.Arrays;
+import java.util.ArrayList;
+
 
 //This will be the parent class for the Trainer_Battle and Wild_Battle
 public class Battle {
 
 	//	//Create local variables to identify the user's pokemon and their opponent's pokemon
 	public String selectedAbility;
+	public int attackSelection = 0;
 	public Pokemon userPokemon;
 	public Pokemon opponentPokemon;
 	public Pokeballs pokeballObj = new Pokeballs(null, 0, 0);
@@ -22,7 +25,7 @@ public class Battle {
 
 	//initialize and array of String variables to store the names of the types
 	//This will be necessary to look up those types in the "multiplier" matrix that follows
-	String types[] = new String [19];{
+/*	String types[] = new String [19];{
 		types[0]="Bug";
 		types[1]="Dark";
 		types[2]="Dragon";
@@ -43,7 +46,8 @@ public class Battle {
 		types[17]="Water";
 		types[18]="None";
 	}
-
+*/	
+	
 	//This matrix (or 2-dimensional array) stores the type-based damage multipliers to be used in battle 
 	double[][] multiplier = {
 			{1,2,1,1,0.5,0.5,0.5,0.5,0.5,2,1,1,1,0.5,2,1,0.5,1,1},
@@ -61,10 +65,13 @@ public class Battle {
 			{1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,0.5,0.5,1,1},
 			{1,1,1,1,2,1,1,1,0.5,2,0.5,1,1,0.5,1,0.5,0,1,1},
 			{1,0,1,1,1,2,1,1,1,1,1,1,1,2,0.5,1,0.5,1,1},
-			{2,1,1,1,1,0.5,2,2,1,1,0.5,2,1,1,1,1,0.5,1,1},
+			{2,1,1,1,1,0.5,2,2,1,1,0.5,2,1,1,1,1,0.5,1,1},	
 			{1,1,1,0.5,2,1,0.5,1,1,1,1,2,1,1,1,2,0.5,0.5,1},
-			{1,1,0.5,1,1,1,2,1,1,0.5,2,1,1,1,1,2,1,0.5,1}};
+			{1,1,0.5,1,1,1,2,1,1,0.5,2,1,1,1,1,2,1,0.5,1},
+			{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}};
 
+
+/*
 	//Initialize every ability-type object that will be used in this game
 	Ability ability0 = new Ability("Bug Bite","Bug",30);
 	Ability ability1 = new Ability("Struggle Bug","Bug",60);
@@ -123,7 +130,7 @@ public class Battle {
 			ability23,ability24,ability25,ability26,ability27,ability28,ability29,ability30,ability31,ability32,ability33,ability34,
 			ability35,ability36,ability37,ability38,ability39,ability40,ability41,ability42,ability43,ability44,ability45,ability46,
 			ability47,ability48,ability49,ability50};
-
+*/
 	//			//Create an array to store all of the pokemon
 	//			Pokemon[] pokemonList={Bulbasaur,Ivysaur,Squirtle,Wartortle,Charmander,Charmeleon,Scyther,Scizor,Onix,Electabuzz,Haunter,Lapras,
 	//					Hitmonchan,Hitmonlee,Drowzee,Snorlax,Mew,Jigglypuff,Zapdos,Articuno,Moltres,Hippowodon,Absol,Magnemite,Goodra,Diglett,
@@ -142,17 +149,41 @@ public class Battle {
 
 	public void startBattle(Pokemon userPokemon, Pokemon opponentPokemon, int index1, int index2, int index3, int index4, int index5, int index6, Player playerObj){
 
+		ArrayList<String> types = new ArrayList<String>();
+		types.add("Bug");
+		types.add("Dark");
+		types.add("Dragon");
+		types.add("Electric");				
+		types.add("Fairy");
+		types.add("Fighting");
+		types.add("Fire");
+		types.add("Flying");				
+		types.add("Ghost");
+		types.add("Grass");
+		types.add("Ground");
+		types.add("Ice");
+		types.add("Normal");
+		types.add("Poison");
+		types.add("Psychic");
+		types.add("Rock");
+		types.add("Steel");
+		types.add("Water");
+		types.add("None");				
+	
 		this.userPokemon = userPokemon;
 		this.opponentPokemon = opponentPokemon;
 		
-		System.out.println("You are:"+this.userPokemon.getName());
-		System.out.println("You are fighting against:"+this.opponentPokemon.getName());
+//		System.out.println("You are fighting against:"+this.opponentPokemon.getName());
+		System.out.println("Your "+userPokemon.getName()+" has strength "+userPokemon.getStrength()+" and HP "+userPokemon.getHP()+"!");
+		System.out.println("A wild "+opponentPokemon.getName()+" with strength "+opponentPokemon.getStrength()+" and HP "+opponentPokemon.getHP()+" has appeared! ..........");
 		//System.out.println("we are now in Battle class");
 		System.out.println("\nLet the battle begin!");
 
 		while (flag !=0){
-			System.out.println("What will you do?");
+			System.out.println("What will you do? (choose from 1~3)");
 			System.out.println(" 1: Attack \n 2: Use Potion\n 3: Use Pokeball");
+			
+			opponentPokemonDamage = (int)(this.opponentPokemon.getAbility1().getAbilityPower()*this.opponentPokemon.getStrength()*multiplier[types.indexOf(this.opponentPokemon.getType1())][types.indexOf(this.opponentPokemon.getAbility1().getAbilityType())]*multiplier[types.indexOf(this.opponentPokemon.getType2())][types.indexOf(this.opponentPokemon.getAbility1().getAbilityType())])/100;
 			
 			//accept's the user's selection and stores it locally
 			Scanner reader = new Scanner (System.in);
@@ -162,19 +193,47 @@ public class Battle {
 			switch(selection)
 			{
 			case 1:
-				System.out.println("You attack first on "+this.opponentPokemon.getName());
-				userPokemonDamage = (int)(this.userPokemon.getAbility1().getAbilityPower()*this.userPokemon.getStrength()*multiplier[index1][index2]*multiplier[index1][index3])/100;
-				opponentPokemonDamage = (int)(this.opponentPokemon.getAbility1().getAbilityPower()*this.opponentPokemon.getStrength()*multiplier[index4][index5]*multiplier[index4][index6])/100;
-				this.opponentPokemon.reduceHP(userPokemonDamage);
+				System.out.println("Choose an attack? (choose from 1~2)");
+				System.out.println("1. "+this.userPokemon.getAbility1().getAbilityName());
+				System.out.println("2. "+this.userPokemon.getAbility2().getAbilityName());
+
+				attackSelection = new Scanner(System.in).nextInt();
 				
-				//After each attack, the player gains a random experience
-				checkEvolutionAndPlayerXPStatus(playerObj);
+				//error correction on the input
+				while(attackSelection > 2 || attackSelection < 1)
+				{
+					System.out.println("That is not a valid selection.");
+					System.out.println("Choose an attack: (choose from 1~2)");
+					System.out.println("1. "+this.userPokemon.getAbility1().getAbilityName());
+					System.out.println("2. "+this.userPokemon.getAbility2().getAbilityName());
+					attackSelection = new Scanner(System.in).nextInt();
+				}
+				
+				if(attackSelection == 1)
+				{
+					selectedAbility = this.userPokemon.getAbility1().getAbilityName();
+					userPokemonDamage = (int)(this.userPokemon.getAbility1().getAbilityPower()*this.userPokemon.getStrength()*multiplier[types.indexOf(this.userPokemon.getType1())][types.indexOf(this.userPokemon.getAbility1().getAbilityType())]*multiplier[types.indexOf(this.userPokemon.getType2())][types.indexOf(this.userPokemon.getAbility1().getAbilityType())])/100;
+				}																														
+				else
+				{
+					selectedAbility = this.userPokemon.getAbility2().getAbilityName();
+					userPokemonDamage = (int)(this.userPokemon.getAbility2().getAbilityPower()*this.userPokemon.getStrength()*multiplier[types.indexOf(this.userPokemon.getType1())][types.indexOf(this.userPokemon.getAbility2().getAbilityType())]*multiplier[types.indexOf(this.userPokemon.getType2())][types.indexOf(this.userPokemon.getAbility2().getAbilityType())])/100;
+				}
+					
+				System.out.println("You attack first on "+this.opponentPokemon.getName()+" with "+selectedAbility);
+//				userPokemonDamage = (int)(this.userPokemon.getAbility1().getAbilityPower()*this.userPokemon.getStrength()*multiplier[index1][index2]*multiplier[index1][index3])/100;
+//				opponentPokemonDamage = (int)(this.opponentPokemon.getAbility1().getAbilityPower()*this.opponentPokemon.getStrength()*multiplier[index4][index5]*multiplier[index4][index6])/100;
+
+				this.opponentPokemon.reduceHP(userPokemonDamage);
 			
 				System.out.println("\n\nScore:\n"+this.userPokemon.getName()+": "+this.userPokemon.getHP()+"\t\t"+this.opponentPokemon.getName()+": "+this.opponentPokemon.getHP());
 				System.out.println(this.opponentPokemon.getName()+"'s turn to attack you");
 				this.userPokemon.reduceHP(opponentPokemonDamage);
 				System.out.println("\n\nScore:\n"+this.userPokemon.getName()+": "+this.userPokemon.getHP()+"\t\t"+this.opponentPokemon.getName()+": "+this.opponentPokemon.getHP());
-				
+
+				//After each attack, the player gains a random experience
+				checkEvolutionAndPlayerXPStatus(playerObj);
+				//check winner
 				checkWinner(0);
 				break;
 
